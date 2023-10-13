@@ -61,6 +61,7 @@ svg {
 @media (max-width: 576px) {
    .no-result {
       font-size: 30px;
+      text-align: center;
    }
 }
 
@@ -74,7 +75,7 @@ svg {
 .container {
    max-width: 1200px;
    margin: 0 auto;
-   padding: 0 16px;
+   padding: 0 20px;
 }
 
 .container-fill {
@@ -286,6 +287,12 @@ svg {
 }
 
 .navigation .navigation__left {}
+
+@media (max-width: 576px) {
+   .navigation .navigation__left {
+      flex-direction: column;
+   }
+}
 
 .navigation .navigation__middle {
    flex: 1 0 200px;
