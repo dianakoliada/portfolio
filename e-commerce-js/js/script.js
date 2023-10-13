@@ -455,7 +455,9 @@ const shop = function () {
       // Ховаємо і показуємо корзину
       this.cartBtn.onclick = () => this.displayProductCart.classList.toggle('show');
 
-      this.categoryBtn.onclick = () => this.category.classList.toggle('show');
+      // Ховаємо і показуємо категорії
+      if (this.categoryBtn)
+         this.categoryBtn.onclick = () => this.category.classList.toggle('show');
 
       // Слідкуємо за полем пошуку
       if (this.inputSearch)

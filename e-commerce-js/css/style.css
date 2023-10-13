@@ -809,6 +809,11 @@ svg {
    display: block;
 }
 
+.cart-added-list__btn .icon-cart-bag {
+   -webkit-font-size: 22px;
+   font-size: 22px;
+}
+
 @media (max-width: 576px) {
    .cart-added-list .cart-added-list__item-img {
       max-width: calc(var(--img-size) * 3);
@@ -1182,7 +1187,7 @@ svg {
 }
 
 .input-group .icon {
-   position: absolute !important;
+   position: absolute;
    top: 50%;
    left: 1rem;
    transform: translate(0, -50%);
