@@ -58,6 +58,13 @@ svg {
    color: #938e8e;
 }
 
+@media (max-width: 576px) {
+   .no-result {
+      font-size: 30px;
+   }
+}
+
+
 .d-flex-center {
    display: flex;
    justify-content: center;
