@@ -45,8 +45,10 @@ ul {
 }
 
 svg {
-   width: 1em;
-   height: 1em;
+   /* width: 1em;
+   height: 1em; */
+   width: 22px;
+   height: 22px;
    position: relative;
 }
 
