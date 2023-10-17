@@ -302,6 +302,12 @@ svg {
    text-align: center;
 }
 
+@media (max-width: 420px) {
+   .navigation .navigation__middle {
+      flex: 1 0 130px;
+   }
+}
+
 .navigation .navigation__right {
    display: flex;
    justify-content: flex-end;
