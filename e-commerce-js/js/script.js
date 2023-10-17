@@ -297,7 +297,7 @@ const shop = function () {
       if (this.cart == 0) {
 
          // Виводимо повідомлення NO RESULTS
-         this.displayProductCart.innerHTML = `<h2 class="no-result">Товарів не знайдено</h2>`;
+         this.displayProductCart.innerHTML = `<h2 class="no-result no-result--cart">No products found</h2>`;
       } else {
          this.cart.forEach(({ id, title, img, price, count }, index) => {
             this.displayProductCart.insertAdjacentHTML('beforeend', `<div class="cart-added-list__item">
