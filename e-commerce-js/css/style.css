@@ -11,6 +11,7 @@
 
 * {
    box-sizing: border-box;
+   /* outline: 1px solid red; */
 }
 
 body {
@@ -45,10 +46,8 @@ ul {
 }
 
 svg {
-   /* width: 1em;
-   height: 1em; */
-   width: 22px;
-   height: 22px;
+   width: 1em;
+   height: 1em;
    position: relative;
 }
 
@@ -192,7 +191,8 @@ svg {
    border-radius: 15px;
 }
 
-.dropdown-content.show {
+.dropdown-content.show,
+.navigation .dropdown.show {
    opacity: 1;
    transform: scale(100%);
 }
@@ -277,11 +277,12 @@ svg {
    align-items: center;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1158px) {
    .navigation .navigation__hold {
       align-items: baseline;
    }
 }
+
 
 .navigation .navigation__left,
 .navigation .navigation__right {
@@ -306,10 +307,6 @@ svg {
    justify-content: flex-end;
 }
 
-.navigation .navigation__right .navigation__item-list {
-   margin-right: -20px;
-}
-
 .navigation .navigation__item-list {
    display: flex;
 }
@@ -329,6 +326,40 @@ svg {
 
 .navigation .navigation__item-link:hover {
    transform: scale(1.15)
+}
+
+.navigation .navigation__toggle {}
+
+.navigation .icon-burger {
+   display: none;
+   position: relative;
+   color: rgba(var(--nav-color-rgb), .75);
+   font-size: 29px;
+}
+
+.navigation .dropdown {}
+
+@media (max-width: 1158px) {
+   .navigation .icon-burger {
+      display: block;
+   }
+
+   .navigation .dropdown {
+      flex-direction: column;
+      transition: 0.25s;
+      opacity: 1;
+      transform: scale(0);
+      padding: 25px;
+      position: absolute;
+      top: 86px;
+      left: 19px;
+      background-color: #ffffff;
+      min-width: 160px;
+      z-index: 4;
+      box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
+      border-radius: 15px;
+   }
+
 }
 
 .navigation .navigation__item-link .icon {
@@ -578,16 +609,6 @@ svg {
    max-height: 100%;
    border-radius: 15px;
    object-fit: cover;
-}
-
-.card-product .card-product__text-hold {
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: flex-start;
-   position: relative;
-   padding: 18px 50px 0 0;
-   margin-bottom: 40px;
 }
 
 .card-product .card-product__title-link {

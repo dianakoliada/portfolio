@@ -46,6 +46,8 @@ const shop = function () {
    this.cartBtn = document.querySelector('#js-cart-added-btn');
    this.cartProductNum = document.querySelectorAll('.js-cart-added-summ');
    this.inputSearch = document.querySelector('#js-input-search');
+   this.burgerIcon = document.querySelector('#js-icon-burger');
+   this.burgerMenu = document.querySelector('#js-menu');
 
 
    // Змінна для timeout
@@ -122,7 +124,8 @@ const shop = function () {
    this.displayCountProducts = (array) => {
 
       // Виводимо цифру в html
-      this.countProducts.innerHTML = array.length;
+      if (this.countProducts)
+         this.countProducts.innerHTML = array.length;
    }
 
 
@@ -458,6 +461,10 @@ const shop = function () {
       // Ховаємо і показуємо категорії
       if (this.categoryBtn)
          this.categoryBtn.onclick = () => this.category.classList.toggle('show');
+
+      // Ховаємо і показуємо меню-бургер
+      if (this.burgerIcon)
+         this.burgerIcon.onclick = () => this.burgerMenu.classList.toggle('show');
 
       // Слідкуємо за полем пошуку
       if (this.inputSearch)

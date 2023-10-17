@@ -79,23 +79,36 @@
             d="M14.59,9.9c.37-3-.23-6.18-2.95-7.9A8.36,8.36,0,0,1,8.9,7c-1.59,1.6-3.23,3-4.2,5.53-1.28,3.67.26,7.42,4,9.51a4.86,4.86,0,0,1,1.86-3.51,4.17,4.17,0,0,0,1.55-2.69,7.41,7.41,0,0,1,4,6.15c6.4-3.4,4.68-10.49,1.63-14.11">
          </path>
       </symbol>
+      <symbol id="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+         <path d="M5 8H13.75M5 12H19M10.25 16L19 16" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" />
+      </symbol>
    </svg>
 
    <div class="navigation">
       <div class="container">
          <div class="navigation__hold">
             <div class="navigation__left">
-               <ul class="menu navigation__item-list">
-                  <li class="menu__li navigation__item">
-                     <a href="index.html" class="menu__link link-hover">Home</a>
-                  </li>
-                  <li class="menu__li navigation__item">
-                     <a href="delivery.html" class="menu__link link-hover">Delivery and payment</a>
-                  </li>
-                  <li class="menu__li navigation__item">
-                     <a href="contacts.html" class="menu__link link-hover">Contacts</a>
-                  </li>
-               </ul>
+               <div class="navigation__toggle">
+                  <svg class='icon icon-burger' id="js-icon-burger">
+                     <use xlink:href='#icon-burger'></use>
+                  </svg>
+                  <ul class="menu navigation__item-list dropdown" id="js-menu">
+                     <li class="menu__li navigation__item">
+                        <a href="index.html" class="menu__link link-hover">Home</a>
+                     </li>
+                     <li class="menu__li navigation__item">
+                        <a href="about.html" class="menu__link link-hover">About us</a>
+                     </li>
+                     <li class="menu__li navigation__item">
+                        <a href="contacts.html" class="menu__link link-hover">Contacts</a>
+                     </li>
+                     <li class="menu__li navigation__item">
+                        <a href="delivery.html" class="menu__link link-hover">Delivery and payment</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
             <div class="navigation__middle">
                <a href="index.html" class="logo">I-happy</a>
@@ -122,7 +135,6 @@
          </div>
       </div>
    </div>
-
    <div class="article">
       <div class="container">
 
