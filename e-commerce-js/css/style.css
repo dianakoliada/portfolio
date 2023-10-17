@@ -59,7 +59,7 @@ svg {
    color: #938e8e;
 }
 
-.no-result--cart {
+.cart-added-list__item-list .no-result--cart {
    opacity: .5;
    font-size: 18px;
    margin: 0 auto;
