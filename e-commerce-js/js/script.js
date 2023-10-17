@@ -311,7 +311,7 @@ const shop = function () {
                                                                                  <span class="cart-added-list__item-meta">Ціна: ${price} USD</span>
                                                                               </span>
                                                                            </p>
-                                                                           <input type="text" class="cart-added-list__item-count js-input" placeholder="0" value="${count}" id="input-count-${id}">
+                                                                           <input type="text" class="cart-added-list__item-count js-input" placeholder="0" value="${count}" id="input-count-${id}" readonly>
                                                                            <button class="cart-added-list__item-btn-plus btn-light js-count" data-type="plus" data-input="#input-count-${id}" data-index="${index}"></button>
                                                                            <button class="cart-added-list__item-btn-minus btn-light js-count" data-type="minus" data-input="#input-count-${id}" data-index="${index}"></button>
                                                                         </div>`)
