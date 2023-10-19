@@ -71,8 +71,11 @@ svg {
 
 @media (max-width: 576px) {
    .no-result {
-      font-size: 30px;
       text-align: center;
+   }
+
+   .no-result--back {
+      font-size: 17px;
    }
 }
 
@@ -1268,6 +1271,7 @@ svg {
    height: 40px;
    background-color: #000;
    color: #fff;
+   border-radius: 8px;
    border: 1px solid transparent;
    font-size: 20px;
 }
@@ -1286,6 +1290,7 @@ svg {
    width: 170px;
    height: 31%;
    background-color: #fff;
+   border-radius: 8px;
 }
 
 .cart-ordered-list__item-img {

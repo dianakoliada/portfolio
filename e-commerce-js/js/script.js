@@ -94,6 +94,7 @@ const shop = function () {
    this.cartTotal = document.querySelector('#js-total-cart');
    this.test = document.querySelector('#js-test');
    this.cartBtnHide = document.querySelector('.cart-added-list');
+   this.totalSum = document.querySelector('#js-total-sum');
 
    // Змінна для timeout
    this.idTimeout = 0;
@@ -380,7 +381,15 @@ const shop = function () {
                                        <a class="no-result no-result--back" href="index.html">Come back for more</a>
                                     </div>`;
          } else {
+
+            // Заглушка для сумми
+            this.summPrice = 0;
+
             this.cart.forEach(({ id, title, img, price, count }, index) => {
+
+               // Підраховуємо сумму замовлення
+               this.summPrice += (count * price);
+
                this.cartInfoTotal.insertAdjacentHTML('beforeend', `<div class="cart-ordered-list__item">
                                                                      <div class="cart-ordered-list__item-img-hold">
                                                                         <img src="img/catalog/${img}" alt="${title}" class="cart-ordered-list__item-img">
@@ -392,6 +401,9 @@ const shop = function () {
                                                                      </div>
                                                                   </div>`)
             })
+
+            // Виводимо сумму в html
+            this.totalSum.insertAdjacentHTML('beforeend', `Total: ${this.summPrice} USD`)
          }
 
       }
@@ -512,7 +524,6 @@ const shop = function () {
 
       // Отримуємо get parameters при завантаженні
       this.getUrlParams();
-      this.isCorrectPage();
 
       // Виводимо товари при завантаженні
       this.viewPorducts();
