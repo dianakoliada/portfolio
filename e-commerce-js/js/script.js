@@ -35,6 +35,48 @@ const shop = function () {
       return cart.some(item => item.id === productId);
    }
 
+   // Отримання URL params для перевірки на якій стр знаходимось
+   this.getUrlParams = () => {
+      this.url = window.location.search;
+
+      // Перевірка на пустоту
+      if (this.url == '')
+         return {};
+
+      //Розділення URL на частини:
+      this.urlParts = this.url.split('?');
+
+      //Отримання рядка з GET-параметрами:
+      this.queryParams = this.urlParts[1];
+
+      //Розділення рядка з GET-параметрами на окремі параметри:
+      this.params = this.queryParams.split('&');
+
+      //Створення об'єкта для зберігання значень параметрів:
+      this.paramsObj = {};
+
+      // Проходження через кожен параметр і зберігання його значення в об'єкті
+      for (let i = 0; i < this.params.length; i++) {
+         this.param = this.params[i].split('=');
+         this.paramName = decodeURIComponent(this.param[0]);
+         this.paramValue = decodeURIComponent(this.param[1]);
+         this.paramsObj[this.paramName] = this.paramValue;
+      }
+
+      // Повертаємо параметри
+      return this.paramsObj;
+   }
+
+   // Загальна функція для перевірки коректності сторінки
+   this.isCorrectPage = (param) => {
+
+      // Диструктуризація об'єкта
+      const { page } = this.getUrlParams();
+
+      // Робимо перевірку на type = order
+      return page == param;
+   }
+
 
    // Змінні для роботи об'єкту
    this.catalog = document.querySelectorAll('.js-catalog-cards');
@@ -50,7 +92,8 @@ const shop = function () {
    this.burgerIcon = document.querySelector('#js-icon-burger');
    this.burgerMenu = document.querySelector('#js-menu');
    this.cartTotal = document.querySelector('#js-total-cart');
-
+   this.test = document.querySelector('#js-test');
+   this.cartBtnHide = document.querySelector('.cart-added-list');
 
    // Змінна для timeout
    this.idTimeout = 0;
@@ -333,8 +376,9 @@ const shop = function () {
          if (this.cart == 0) {
 
             // Виводимо повідомлення NO RESULTS
-            this.cartInfoTotal.innerHTML = `<h2 class="no-result no-result--cart">Cart is empty</h2>`;
-            // this.cartInfoTotal.innerHTML = `<div class="cart-ordered-list__total">Total USD</div>`;
+            this.test.innerHTML = ` <div class="no-result no-result--cart">Ups... Your cart is empty now <br>
+                                       <a class="no-result no-result--back" href="index.html">Come back for more</a>
+                                    </div>`;
          } else {
             this.cart.forEach(({ id, title, img, price, count }, index) => {
                this.cartInfoTotal.insertAdjacentHTML('beforeend', `<div class="cart-ordered-list__item">
@@ -353,8 +397,6 @@ const shop = function () {
       }
 
    }
-
-
 
 
    // Слідкую за натиском по корзинці в картці товару
@@ -429,6 +471,7 @@ const shop = function () {
 
    }
 
+
    // Звертаємось до апі пошуку товарів
    this.searchFetchProducts = (inputValue) => {
 
@@ -446,6 +489,7 @@ const shop = function () {
          })
    }
 
+
    // Пошук товарів при події введеня користувачем значення
    this.searchProducts = (e) => {
 
@@ -462,8 +506,13 @@ const shop = function () {
       }, 700)
    }
 
+
    // Створюємо метод об'єкту який запускає весь функціонал 
    this.init = () => {
+
+      // Отримуємо get parameters при завантаженні
+      this.getUrlParams();
+      this.isCorrectPage();
 
       // Виводимо товари при завантаженні
       this.viewPorducts();
@@ -509,6 +558,11 @@ const shop = function () {
       // Слідкуємо за полем пошуку
       if (this.inputSearch)
          this.inputSearch.oninput = this.searchProducts;
+
+      // Ховаємо корзинку на сторінці замовлення
+      if (this.isCorrectPage('order')) {
+         this.cartBtnHide.classList.add('hide');
+      }
    }
 }
 

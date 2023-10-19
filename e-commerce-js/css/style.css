@@ -59,10 +59,14 @@ svg {
    color: #938e8e;
 }
 
-.cart-added-list__item-list .no-result--cart {
+.no-result--cart {
    opacity: .5;
-   font-size: 18px;
-   margin: 0 auto;
+   font-size: 22px;
+}
+
+.no-result--back {
+   font-size: 20px;
+   border-bottom: 1px solid #938e8e;
 }
 
 @media (max-width: 576px) {
@@ -813,7 +817,7 @@ svg {
 }
 
 .hide {
-   display: block;
+   display: none;
 }
 
 .cart-added-list .cart-added-list__item {
