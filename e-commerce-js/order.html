@@ -135,32 +135,42 @@
          </div>
       </div>
    </div>
-   <div class="article">
+   <div class="order-page">
       <div class="container">
-         <h2 class="article__title article__title-order">Delivery and payment</h2>
-         <div class="page-content page-content-order">
-            <p>
-               Please fill out the form to complete your order:
-            </p>
-            <form class="order-form">
-               <div class="form-group">
-                  <label for="name" class="order-text">Name:</label>
-                  <input type="text" id="name" name="name" required class="order-input" placeholder="">
+         <h2 class="order-page order-page-title">Order details</h2>
+         <div class="order-page flex-holder">
+            <div class="page-content page-content-order">
+               <p>
+                  Please fill out the form to complete your order:
+               </p>
+               <form class="order-form">
+                  <div class="form-group">
+                     <label for="name" class="order-text">Name:</label>
+                     <input type="text" id="name" name="name" required class="order-input" placeholder="">
+                  </div>
+                  <div class="form-group">
+                     <label for="phone" class="order-text">Phone number:</label>
+                     <input type="tel" placeholder="" id="phone" name="phone" required class="order-input">
+                  </div>
+                  <div class="form-group">
+                     <label for="phone" class="order-text">Email:</label>
+                     <input type="email" id="email" name="email" required class="order-input" placeholder="">
+                  </div>
+                  <div class="form-group">
+                     <label for="address" class="order-text">Delivery address:</label>
+                     <textarea id="address" name="address" rows="4" required class="order-input"
+                        placeholder=""></textarea>
+                  </div>
+                  <button type="submit" class="order-btn d-flex-center">Order now</button>
+               </form>
+            </div>
+            <div class="page-content page-content-info">
+               <h3 class="cart-ordered-list__total">Your order is</h3>
+               <div class="ordered-list" id="js-cart-total">
+
                </div>
-               <div class="form-group">
-                  <label for="phone" class="order-text">Phone number:</label>
-                  <input type="tel" id="phone" name="phone" required class="order-input" placeholder="">
-               </div>
-               <div class="form-group">
-                  <label for="phone" class="order-text">Email:</label>
-                  <input type="email" id="email" name="email" required class="order-input" placeholder="">
-               </div>
-               <div class="form-group">
-                  <label for="address" class="order-text">Delivery address:</label>
-                  <textarea id="address" name="address" rows="4" required class="order-input" placeholder=""></textarea>
-               </div>
-               <button type="submit" class="order-btn d-flex-center">Order now</button>
-            </form>
+               <h3 class="cart-ordered-list__total">Total USD</h3>
+            </div>
          </div>
       </div>
    </div>
@@ -217,7 +227,6 @@
       <div class="cart-added-list__item-list" id="js-cart-added-list">
       </div>
    </div>
-
 
    <script src="js/script.js"></script>
 </body>

@@ -43,11 +43,13 @@ const shop = function () {
    this.categoryBtn = document.querySelector('.dropdown-btn');
    this.countProducts = document.querySelector('#count-products');
    this.displayProductCart = document.querySelector('#js-cart-added-list');
+   this.cartInfoTotal = document.querySelector('#js-cart-total');
    this.cartBtn = document.querySelector('#js-cart-added-btn');
    this.cartProductNum = document.querySelectorAll('.js-cart-added-summ');
    this.inputSearch = document.querySelector('#js-input-search');
    this.burgerIcon = document.querySelector('#js-icon-burger');
    this.burgerMenu = document.querySelector('#js-menu');
+   this.cartTotal = document.querySelector('#js-total-cart');
 
 
    // Змінна для timeout
@@ -284,7 +286,7 @@ const shop = function () {
    }
 
 
-   // Виводимо товар в корзину
+   // Виводимо товар в корзину-sm
    this.viewCartProducts = () => {
 
       // Очищуємо від старого результату
@@ -297,7 +299,7 @@ const shop = function () {
       if (this.cart == 0) {
 
          // Виводимо повідомлення NO RESULTS
-         this.displayProductCart.innerHTML = `<h2 class="no-result no-result--cart">No products found</h2>`;
+         this.displayProductCart.innerHTML = `<h2 class="no-result no-result--cart">Cart is empty</h2>`;
       } else {
          this.cart.forEach(({ id, title, img, price, count }, index) => {
             this.displayProductCart.insertAdjacentHTML('beforeend', `<div class="cart-added-list__item">
@@ -308,7 +310,7 @@ const shop = function () {
                                                                            <p class="cart-added-list__item-text-hold">
                                                                               <a href="#" class="cart-added-list__item-title-link">${title}</a>
                                                                               <span class="cart-added-list__item-meta-list">
-                                                                                 <span class="cart-added-list__item-meta">Ціна: ${price} USD</span>
+                                                                                 <span class="cart-added-list__item-meta">${price} USD</span>
                                                                               </span>
                                                                            </p>
                                                                            <input type="text" class="cart-added-list__item-count js-input" placeholder="0" value="${count}" id="input-count-${id}" readonly>
@@ -318,6 +320,41 @@ const shop = function () {
          })
       }
    }
+
+
+   // Виводимо інфо замовлення в корзину
+   this.viewCartTotal = () => {
+
+      // Очищуємо від старого результату
+      if (this.cartInfoTotal) {
+         this.cartInfoTotal.innerHTML = '';
+
+         // Перевіряємо масив cart на пустоту
+         if (this.cart == 0) {
+
+            // Виводимо повідомлення NO RESULTS
+            this.cartInfoTotal.innerHTML = `<h2 class="no-result no-result--cart">Cart is empty</h2>`;
+            // this.cartInfoTotal.innerHTML = `<div class="cart-ordered-list__total">Total USD</div>`;
+         } else {
+            this.cart.forEach(({ id, title, img, price, count }, index) => {
+               this.cartInfoTotal.insertAdjacentHTML('beforeend', `<div class="cart-ordered-list__item">
+                                                                     <div class="cart-ordered-list__item-img-hold">
+                                                                        <img src="img/catalog/${img}" alt="${title}" class="cart-ordered-list__item-img">
+                                                                     </div>
+                                                                     <div class="cart-ordered-list__item-text-hold">
+                                                                        <div class="cart-ordered-list__item-title">${title}</div>
+                                                                        <div class="cart-ordered-list__item-price">amount ${count}</div>
+                                                                        <div class="cart-ordered-list__item-price">${price} USD</div>
+                                                                     </div>
+                                                                  </div>`)
+            })
+         }
+
+      }
+
+   }
+
+
 
 
    // Слідкую за натиском по корзинці в картці товару
@@ -437,8 +474,11 @@ const shop = function () {
       // Виводимо категорії при завантаженні
       this.viewCategories();
 
-      // Виводимо товари в корзину
+      // Виводимо товари в корзину-sm
       this.viewCartProducts();
+
+      // Виводимо інфо замовлення в корзину
+      this.viewCartTotal();
 
       // Слідкуємо за кліком по категоріях
       if (this.category)
