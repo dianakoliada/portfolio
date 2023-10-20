@@ -95,6 +95,7 @@ const shop = function () {
    this.test = document.querySelector('#js-test');
    this.cartBtnHide = document.querySelector('.cart-added-list');
    this.totalSum = document.querySelector('#js-total-sum');
+   this.form = document.querySelector('#js-form');
 
    // Змінна для timeout
    this.idTimeout = 0;
@@ -516,6 +517,249 @@ const shop = function () {
          // Викликаємо функцію звернення до арі
          this.searchFetchProducts(inputValue);
       }, 700)
+   }
+
+
+   // Функція відправки листа до клієнта
+   this.sendEmail = (someData) => {
+      // Робимо запит на сервер
+      fetch('https://api.inderio.com/send-email', {
+         method: 'POST',
+         body: someData
+      })
+         .then(response => response.json())
+         .then(result => {
+            console.log("result: ", result);
+            console.log('success')
+         });
+   }
+
+   if (this.form) {
+      // Вішаємо на форму подію відправки данних на ел пошту
+      this.form.onsubmit = (event) => {
+         event.preventDefault();
+
+         // Отримую дані з форми
+         this.formData = new FormData(this.form);
+
+         // Оголошую пустий об'єкт
+         this.data = {};
+
+         // Наповнюю пустий об'єкт даними з форми
+         this.formData.forEach((el, key) => {
+            this.data[key] = el;
+         })
+
+         this.formData.append('message', this.emailUserTemplate());
+
+         // Викликаємо функцію this.sendEmail та передаємо об'єкт formData як аргумент
+         this.sendEmail(this.formData);
+      }
+   }
+
+   // Шаблон для користувача
+   this.emailUserTemplate = () => {
+      // Роблю заглушку, що буде наповнюватись кожною ітерацією корзини
+      this.cartList = '';
+
+      this.cart.forEach(({ img, title, price, oldprice, hotoffer, catid, id, count }) => {
+         this.cartList += ` <table class="column" style="border-spacing: 0; width: 100%; max-width: 150px; display: inline-block; vertical-align: top; text-align: left;"
+                              width="100%" valign="top" align="left">
+                              <tr>
+                                 <td class="padding" style="padding: 15px;">
+                                    <table class="content" style="border-spacing: 0; font-size: 15px; padding: 0 5px;">
+                                       <tr>
+                                          <td style="padding: 0;">
+                                             <div class="cart-ordered-list__item-img-hold">
+                                                <img src="img/catalog/${img}" alt="${title}"
+                                                   class="cart-ordered-list__item-img" width="100"
+                                                   style="border: 0; max-width: 100px;">
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td style="padding: 0;">
+                                             <div class="cart-ordered-list__item-text-hold">
+                                                <div class="cart-ordered-list__item-title">${title}</div>
+                                                <div class="cart-ordered-list__item-price">amount ${count}</div>
+                                                <div class="cart-ordered-list__item-price">${price} USD</div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>`
+      });
+
+      return `<!DOCTYPE html>
+               <html lang="en">
+               <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Email template</title>
+               </head>
+               <body style="margin: 0; padding: 0;">
+                  <center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 60px;">
+                     <table class="main" width="100%"
+                        style="background-color: #fff; margin: 0 auto; width: 100%; max-width: 600px; border-spacing: 0; font-family: Poppins, sans-serif; color: #171a1b;"
+                        bgcolor="#fff">
+                        <!-- LOGO SECTION -->
+                        <tr>
+                           <td style="padding: 14px 0 4px;">
+                              <table width="100%" style="border-spacing: 0;">
+                                 <tr>
+                                    <td class="two-columns" style="padding: 0; text-align: center; font-size: 0;" align="center">
+                                       <table class="column"
+                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
+                                          width="100%" valign="baseline" align="center">
+                                          <tr>
+                                             <td style="padding: 0 52px 10px;">
+                                                <a href="https://dianakoliada.github.io/portfolio/e-commerce-js/" target="_blank" class="logo"
+                                                   style="color: #363837; font-size: 28px; font-weight: 700; line-height: 1.2; text-decoration: none;">I-happy</a>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                       <table class="column"
+                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
+                                          width="100%" valign="baseline" align="center">
+                                          <tr>
+                                             <td style="padding: 10px 82px;">
+                                                <a href="https://www.facebook.com/" target="_blank" style="padding-right: 15px;">
+                                                   <img
+                                                      src="https://cdn.iconscout.com/icon/premium/png-512-thumb/facebook-2752192-2285009.png?f=webp&w=256"
+                                                      alt="Icon facebook" width="20" style="border: 0;"></a>
+                                                <a href="https://www.instagram.com/" target="_blank" style="padding-right: 15px;">
+                                                   <img
+                                                      src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-1868978-1583142.png?f=webp&w=256"
+                                                      alt="Icon instagram" width="20" style="border: 0;"></a>
+                                                <a href="https://www.youtube.com/" target="_blank" style="padding-right: 15px;">
+                                                   <img
+                                                      src="https://cdn.iconscout.com/icon/free/png-512/free-youtube-227-498416.png?f=webp&w=256"
+                                                      alt="Icon youtube" width="20" style="border: 0;"></a>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!-- BANNER IMG -->
+                        <tr>
+                           <td style="padding: 0;">
+                              <a href="#">
+                                 <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL8-ndPrE10m8o45Og30DmHP2lmO_-ywaKVkQ9KDeHZHE_Rnioqr2e1pO8aSxBRfICFE&usqp=CAU"
+                                    alt="Banner img" width="600" style="border: 0; max-width: 100%;"></a>
+                              <h3 class="title" style="text-align: center;">Hello! Thanks for choosing us!<br> Here is your order
+                                 details:</h3>
+                           </td>
+                        </tr>
+                        <!-- HERE WILL BE ORDER DATA -->
+                        <tr>
+                           <td style="padding: 0;">
+                              <table width="100%" style="border-spacing: 0;">
+                                 <tr>
+                                    <td class="some-columns" style="text-align: center; font-size: 0; padding: 15px 25px;"
+                                       align="center">
+                                       <!-- rder info/ start of column -->
+                                       ${this.cartList}
+                                       <!-- end of column -->
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!-- TWO COLUMN SECTION (new product advert)-->
+                        <tr>
+                           <td style="padding: 0; background-color: #f4f4f4; color: #171a1b;" bgcolor="#f4f4f4">
+                              <table width="100%" style="border-spacing: 0;">
+                                 <tr>
+                                    <td class="two-columns last" style="text-align: center; font-size: 0; padding: 30px 0;"
+                                       align="center">
+                                       <table class="column"
+                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
+                                          width="100%" valign="baseline" align="center">
+                                          <tr>
+                                             <td class="padding" style="padding: 20px;">
+                                                <table class="content"
+                                                   style="border-spacing: 0; font-size: 15px; line-height: 20px; text-align: left;"
+                                                   align="left">
+                                                   <tr>
+                                                      <td style="padding: 0;">
+                                                         <a href="#">
+                                                            <img
+                                                               src="https://github.com/dianakoliada/portfolio/blob/main/e-commerce-js/img/catalog/15.png?raw=true"
+                                                               alt="Product" width="260" style="border: 0; max-width: 260;">
+                                                         </a>
+                                                      </td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                       <!-- end of column -->
+                                       <table class="column"
+                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
+                                          width="100%" valign="baseline" align="center">
+                                          <tr>
+                                             <td class="padding" style="padding: 20px;">
+                                                <table class="content"
+                                                   style="border-spacing: 0; font-size: 15px; line-height: 20px; text-align: left;"
+                                                   align="left">
+                                                   <tr>
+                                                      <td style="padding: 0; padding-bottom: 56px;">
+                                                         <p style="font-weight: bold; font-size: 18px;">Hot offers!</p>
+                                                         <p style="padding-bottom: 16px;">
+                                                            Description.... Lorem ipsum dolor sit, amet
+                                                            consectetur adipisicing elit. Repudiandae, consectetur?
+                                                         </p>
+                                                         <a href="https://dianakoliada.github.io/portfolio/e-commerce-js/" target="_blank" class="button"
+                                                            style="background-color: #ffffff; color: #171a1b; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold;">More</a>
+                                                      </td>
+                                                   </tr>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!-- FOOTER SECTION -->
+                        <tr>
+                           <td style="padding: 0; background-color: #ffff;" bgcolor="#ffff">
+                              <table width="100%" style="border-spacing: 0;">
+                                 <tr>
+                                    <td style="text-align: center; padding: 45px 20px; color: black;" align="center">
+                                       <a href="https://dianakoliada.github.io/portfolio/e-commerce-js/" target="_blank" class="logo"
+                                          style="color: #363837; font-size: 28px; font-weight: 700; line-height: 1.2; text-decoration: none;">I-happy</a>
+                                       <p style="padding: 10px;">Slogan</p>
+                                       <p style="padding: 10px;">Address</p>
+                                       <a href="https://www.facebook.com/" target="_blank" style="padding-right: 10px;">
+                                          <img
+                                             src="https://cdn.iconscout.com/icon/premium/png-512-thumb/facebook-2752192-2285009.png?f=webp&w=256"
+                                             alt="Icon facebook" width="20" style="border: 0;"></a>
+                                       <a href="https://www.instagram.com/" target="_blank" style="padding-right: 10px;">
+                                          <img
+                                             src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-1868978-1583142.png?f=webp&w=256"
+                                             alt="Icon instagram" width="20" style="border: 0;"></a>
+                                       <a href="https://www.youtube.com/" target="_blank" style="padding-right: 10px;">
+                                          <img
+                                             src="https://cdn.iconscout.com/icon/free/png-512/free-youtube-227-498416.png?f=webp&w=256"
+                                             alt="Icon youtube" width="20" style="border: 0;"></a>
+                                       <p style="padding: 10px;">SUBSCRIBE</p>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                     </table>
+                  </center>
+               </body>
+               </html>`
    }
 
 
