@@ -147,30 +147,33 @@
                <h3 class="cart-ordered-list__total" id="js-total-sum"></h3>
             </div>
             <div class="page-content page-content-order">
-               <p>
-                  Please fill out the form to complete your order:
-               </p>
-               <form class="order-form" id="js-form">
-                  <div class="form-group">
-                     <label for="name" class="order-text">Name:</label>
-                     <input type="text" id="name" name="name" required class="order-input" placeholder="" value="Diana">
-                  </div>
-                  <div class="form-group">
-                     <label for="phone" class="order-text">Phone number:</label>
-                     <input type="tel" placeholder="" id="phone" name="phone" required class="order-input"
-                        value="0999999999">
-                  </div>
-                  <div class="form-group">
-                     <label for="email" class="order-text">Email:</label>
-                     <input type="email" id="email" name="to" required class="order-input" placeholder=""
-                        value="koliada.di@gmail.com">
-                  </div>
-                  <div class="form-group">
-                     <label for="address" class="order-text">Delivery address:</label>
-                     <textarea id="address" name="address" rows="4" class="order-input" placeholder=""></textarea>
-                  </div>
-                  <button type="submit" class="order-btn d-flex-center">Order now</button>
-               </form>
+               <div class="page-content page-content-form-wrap" id="js-form-wrap">
+                  <p>
+                     Please fill out the form to complete your order:
+                  </p>
+                  <form class="order-form" id="js-form">
+                     <div class="form-group">
+                        <label for="name" class="order-text">Name:</label>
+                        <input type="text" id="name" name="name" required class="order-input" placeholder="" value="">
+                     </div>
+                     <div class="form-group">
+                        <label for="phone" class="order-text">Phone number:</label>
+                        <input type="tel" placeholder="" id="phone" name="phone" required class="order-input" value="">
+                     </div>
+                     <div class="form-group">
+                        <label for="email" class="order-text">Email:</label>
+                        <input type="email" id="email" name="to" required class="order-input" placeholder="" value="">
+                     </div>
+                     <div class="form-group">
+                        <label for="address" class="order-text">Delivery address:</label>
+                        <textarea id="address" name="address" rows="4" class="order-input" placeholder=""></textarea>
+                     </div>
+                     <button type="submit" class="order-btn d-flex-center" id="js-order-btn">Order now</button>
+                  </form>
+               </div>
+               <div class="success hide" id="js-success">
+                  Thanks! <br> Your order has been accepted and will be processed soon.
+               </div>
             </div>
          </div>
       </div>

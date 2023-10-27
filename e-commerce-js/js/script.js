@@ -96,6 +96,9 @@ const shop = function () {
    this.cartBtnHide = document.querySelector('.cart-added-list');
    this.totalSum = document.querySelector('#js-total-sum');
    this.form = document.querySelector('#js-form');
+   this.orderBtn = document.querySelector('#js-order-btn');
+   this.orderSuccess = document.querySelector('#js-success');
+   this.orderFormWrap = document.querySelector('#js-form-wrap');
 
    // Змінна для timeout
    this.idTimeout = 0;
@@ -344,7 +347,7 @@ const shop = function () {
       if (this.cart == 0) {
 
          // Виводимо повідомлення NO RESULTS
-         this.displayProductCart.innerHTML = `<h2 class="no-result no-result--cart">Cart is empty</h2>`;
+         this.displayProductCart.innerHTML = `<h2 class="no-result no-result-cart-sm">Cart is empty</h2>`;
       } else {
          this.cart.forEach(({ id, title, img, price, count }, index) => {
             this.displayProductCart.insertAdjacentHTML('beforeend', `<div class="cart-added-list__item">
@@ -378,9 +381,14 @@ const shop = function () {
          if (this.cart == 0) {
 
             // Виводимо повідомлення NO RESULTS
-            this.test.innerHTML = ` <div class="no-result no-result--cart">Ups... Your cart is empty now <br>
+            this.test.innerHTML = ` <div class="no-result no-result-cart d-flex-center">Ups... Your cart is empty now <br>
+                                       <div class="cart-empty-icon-holder">
+                                          <img src="./img/favicon/shopping-cart.png" alt="shopping cart" class="cart-empty-icon">
+                                       </div>
                                        <a class="no-result no-result--back" href="index.html">Come back for more</a>
                                     </div>`;
+            this.orderBtn.disabled = true;
+            this.orderBtn.style.backgroundColor = '#b4b4b4';
          } else {
 
             // Заглушка для сумми
@@ -434,6 +442,7 @@ const shop = function () {
          this.addNewProduct(el);
       }
    }
+
 
    // Функція видалення товару з корзини
    this.removeProductFromCart = (item) => {
@@ -529,12 +538,18 @@ const shop = function () {
       })
          .then(response => response.json())
          .then(result => {
+
+
+            this.orderFormWrap.classList.add('hide');
+            this.orderSuccess.classList.remove('hide');
             console.log("result: ", result);
             console.log('success')
          });
    }
 
+
    if (this.form) {
+
       // Вішаємо на форму подію відправки данних на ел пошту
       this.form.onsubmit = (event) => {
          event.preventDefault();
@@ -555,7 +570,9 @@ const shop = function () {
          // Викликаємо функцію this.sendEmail та передаємо об'єкт formData як аргумент
          this.sendEmail(this.formData);
       }
+
    }
+
 
    // Шаблон для користувача
    this.emailUserTemplate = () => {
