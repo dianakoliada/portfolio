@@ -52,8 +52,11 @@ ul {
 }
 
 svg {
+   -webkit-width: 1em;
    width: 1em;
+   -webkit-height: 1em;
    height: 1em;
+   -webkit-position: relative;
    position: relative;
 }
 
@@ -825,6 +828,13 @@ h2 .no-result {
    background-color: #6C798E;
 }
 
+@media (max-width: 576px) {
+   .cart-added-list .cart-added-list__btn:hover {
+      background-color: inherit;
+   }
+
+}
+
 .cart-added-list .cart-added-list__btn:focus {
    box-shadow: 0 0 0 5px rgba(216, 217, 219, 0.5);
 }
@@ -889,7 +899,7 @@ h2 .no-result {
 }
 
 .cart-added-list__btn .icon-cart-bag {
-   -webkit-font-size: 22px;
+   -webkit-font-size: 62px;
    font-size: 22px;
 }
 
