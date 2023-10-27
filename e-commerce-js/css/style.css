@@ -817,7 +817,6 @@ h2 .no-result {
    color: #fff;
    border: 1px solid transparent;
    border-radius: 50%;
-   -webkit-font-size: 22px;
    font-size: 22px;
    position: relative;
    z-index: 2;
@@ -900,6 +899,7 @@ h2 .no-result {
 
 .cart-added-list__btn .icon-cart-bag {
    font-size: 22px;
+   position: absolute;
 }
 
 @media (max-width: 576px) {
