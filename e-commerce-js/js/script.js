@@ -580,7 +580,7 @@ const shop = function () {
       this.cartList = '';
 
       this.cart.forEach(({ img, title, price, oldprice, hotoffer, catid, id, count }) => {
-         this.cartList += ` <table class="column" style="border-spacing: 0; width: 100%; max-width: 150px; display: inline-block; vertical-align: top; text-align: left;"
+         this.cartList += ` <table class="column" style="border-spacing: 0; width: 100%; max-width: 300px; display: inline-block; vertical-align: top; text-align: left;"
                               width="100%" valign="top" align="left">
                               <tr>
                                  <td class="padding" style="padding: 15px;">
@@ -588,7 +588,7 @@ const shop = function () {
                                        <tr>
                                           <td style="padding: 0;">
                                              <div class="cart-ordered-list__item-img-hold">
-                                                <img src="img/catalog/${img}" alt="${title}"
+                                                <img src="https://64fecbcdf8b9eeca9e291654.mockapi.io/catalog${img}" alt=""
                                                    class="cart-ordered-list__item-img" width="100"
                                                    style="border: 0; max-width: 100px;">
                                              </div>
@@ -609,51 +609,39 @@ const shop = function () {
                            </table>`
       });
 
+
       return `<!DOCTYPE html>
                <html lang="en">
                <head>
                   <meta charset="UTF-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Email template</title>
+                  <title>Document</title>
                </head>
-               <body style="margin: 0; padding: 0;">
-                  <center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding-bottom: 60px;">
-                     <table class="main" width="100%"
-                        style="background-color: #fff; margin: 0 auto; width: 100%; max-width: 600px; border-spacing: 0; font-family: Poppins, sans-serif; color: #171a1b;"
-                        bgcolor="#fff">
+               <body style="margin: 0; padding: 0; background-color: #cccccc;">
+                  <center class="wrapper" style="width: 100%; table-layout: fixed; background-color: #cccccc; padding: 20px 0;">
+                     <table class="main" width="100%" style="background-color: #fff; margin: 0 auto; width: 100%; max-width: 600px; border-spacing: 0; font-family: Poppins, sans-serif; color: #171a1b;" bgcolor="#fff">
                         <!-- LOGO SECTION -->
                         <tr>
                            <td style="padding: 14px 0 4px;">
                               <table width="100%" style="border-spacing: 0;">
                                  <tr>
                                     <td class="two-columns" style="padding: 0; text-align: center; font-size: 0;" align="center">
-                                       <table class="column"
-                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
-                                          width="100%" valign="baseline" align="center">
+                                       <table class="column" style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;" width="100%" valign="baseline" align="center">
                                           <tr>
-                                             <td style="padding: 0 52px 10px;">
-                                                <a href="https://dianakoliada.github.io/portfolio/e-commerce-js/" target="_blank" class="logo"
-                                                   style="color: #363837; font-size: 28px; font-weight: 700; line-height: 1.2; text-decoration: none;">I-happy</a>
+                                             <td style="padding: 0 85px 10px;">
+                                                <a href="index.html" target="_blank" class="logo" style="color: #363837; font-size: 28px; font-weight: 700; line-height: 1.2; text-decoration: none;">I-happy</a>
                                              </td>
                                           </tr>
                                        </table>
-                                       <table class="column"
-                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
-                                          width="100%" valign="baseline" align="center">
+                                       <table class="column" style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;" width="100%" valign="baseline" align="center">
                                           <tr>
-                                             <td style="padding: 10px 82px;">
-                                                <a href="https://www.facebook.com/" target="_blank" style="padding-right: 15px;">
-                                                   <img
-                                                      src="https://cdn.iconscout.com/icon/premium/png-512-thumb/facebook-2752192-2285009.png?f=webp&w=256"
-                                                      alt="Icon facebook" width="20" style="border: 0;"></a>
-                                                <a href="https://www.instagram.com/" target="_blank" style="padding-right: 15px;">
-                                                   <img
-                                                      src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-1868978-1583142.png?f=webp&w=256"
-                                                      alt="Icon instagram" width="20" style="border: 0;"></a>
-                                                <a href="https://www.youtube.com/" target="_blank" style="padding-right: 15px;">
-                                                   <img
-                                                      src="https://cdn.iconscout.com/icon/free/png-512/free-youtube-227-498416.png?f=webp&w=256"
-                                                      alt="Icon youtube" width="20" style="border: 0;"></a>
+                                             <td style="padding: 15px 92px;">
+                                                <a href="https://www.facebook.com/" target="_blank" style="padding-right: 10px;">
+                                                   <img src="https://img.icons8.com/?size=50&id=118467&format=png" alt="Icon facebook" width="20" style="border: 0;"></a>
+                                                <a href="https://www.instagram.com/" target="_blank" style="padding-right: 10px;">
+                                                   <img src="https://img.icons8.com/?size=50&id=32309&format=png" alt="Icon instagram" width="20" style="border: 0;"></a>
+                                                <a href="#" style="padding-right: 10px;">
+                                                   <img src="https://img.icons8.com/?size=50&id=8824&format=png" alt="Icon twitter" width="20" style="border: 0;"></a>
                                              </td>
                                           </tr>
                                        </table>
@@ -666,49 +654,43 @@ const shop = function () {
                         <tr>
                            <td style="padding: 0;">
                               <a href="#">
-                                 <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL8-ndPrE10m8o45Og30DmHP2lmO_-ywaKVkQ9KDeHZHE_Rnioqr2e1pO8aSxBRfICFE&usqp=CAU"
-                                    alt="Banner img" width="600" style="border: 0; max-width: 100%;"></a>
-                              <h3 class="title" style="text-align: center;">Hello! Thanks for choosing us!<br> Here is your order
-                                 details:</h3>
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqL8-ndPrE10m8o45Og30DmHP2lmO_-ywaKVkQ9KDeHZHE_Rnioqr2e1pO8aSxBRfICFE&usqp=CAU" alt="Banner img" width="600" style="border: 0; max-width: 100%;"></a>
+                              <h2 class="title" style="text-align: center;">Hello! Thanks for choosing us!<br> Here is your order
+                                 details:</h2>
                            </td>
                         </tr>
                         <!-- HERE WILL BE ORDER DATA -->
+                            ${this.cartList}
                         <tr>
-                           <td style="padding: 0;">
+                           <td style="padding: 0; background-color: #ffff;" bgcolor="#ffff">
                               <table width="100%" style="border-spacing: 0;">
                                  <tr>
-                                    <td class="some-columns" style="text-align: center; font-size: 0; padding: 15px 25px;"
-                                       align="center">
-                                       <!-- rder info/ start of column -->
-                                       ${this.cartList}
-                                       <!-- end of column -->
+                                    <td style="text-align: left; padding: 10px; color: #000000;">
+                                       <h3>Total: ${this.summPrice} UAH</h3>
                                     </td>
                                  </tr>
                               </table>
                            </td>
                         </tr>
+
+
+
+
+
                         <!-- TWO COLUMN SECTION (new product advert)-->
                         <tr>
                            <td style="padding: 0; background-color: #f4f4f4; color: #171a1b;" bgcolor="#f4f4f4">
                               <table width="100%" style="border-spacing: 0;">
                                  <tr>
-                                    <td class="two-columns last" style="text-align: center; font-size: 0; padding: 30px 0;"
-                                       align="center">
-                                       <table class="column"
-                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
-                                          width="100%" valign="baseline" align="center">
+                                    <td class="two-columns last" style="text-align: center; font-size: 0; padding: 30px 0;" align="center">
+                                       <table class="column" style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;" width="100%" valign="baseline" align="center">
                                           <tr>
                                              <td class="padding" style="padding: 20px;">
-                                                <table class="content"
-                                                   style="border-spacing: 0; font-size: 15px; line-height: 20px; text-align: left;"
-                                                   align="left">
+                                                <table class="content" style="border-spacing: 0; font-size: 15px; line-height: 20px; text-align: left;" align="left">
                                                    <tr>
                                                       <td style="padding: 0;">
                                                          <a href="#">
-                                                            <img
-                                                               src="https://github.com/dianakoliada/portfolio/blob/main/e-commerce-js/img/catalog/15.png?raw=true"
-                                                               alt="Product" width="260" style="border: 0; max-width: 260;">
+                                                            <img src="https://github.com/dianakoliada/portfolio/blob/main/e-commerce-js/img/catalog/15.png?raw=true" alt="Product" width="260" style="border: 0; max-width: 260;">
                                                          </a>
                                                       </td>
                                                    </tr>
@@ -717,23 +699,18 @@ const shop = function () {
                                           </tr>
                                        </table>
                                        <!-- end of column -->
-                                       <table class="column"
-                                          style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;"
-                                          width="100%" valign="baseline" align="center">
+                                       <table class="column" style="border-spacing: 0; width: 100%; max-width: 290px; display: inline-block; vertical-align: baseline; text-align: center;" width="100%" valign="baseline" align="center">
                                           <tr>
                                              <td class="padding" style="padding: 20px;">
-                                                <table class="content"
-                                                   style="border-spacing: 0; font-size: 15px; line-height: 20px; text-align: left;"
-                                                   align="left">
+                                                <table class="content" style="border-spacing: 0; font-size: 15px; line-height: 20px; text-align: left;" align="left">
                                                    <tr>
-                                                      <td style="padding: 0; padding-bottom: 56px;">
+                                                      <td style="padding: 0;">
                                                          <p style="font-weight: bold; font-size: 18px;">Hot offers!</p>
                                                          <p style="padding-bottom: 16px;">
                                                             Description.... Lorem ipsum dolor sit, amet
                                                             consectetur adipisicing elit. Repudiandae, consectetur?
                                                          </p>
-                                                         <a href="https://dianakoliada.github.io/portfolio/e-commerce-js/" target="_blank" class="button"
-                                                            style="background-color: #ffffff; color: #171a1b; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold;">More</a>
+                                                         <a href="index.html" target="_blank" class="button" style="background-color: #ffffff; color: #171a1b; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold;">More</a>
                                                       </td>
                                                    </tr>
                                                 </table>
@@ -750,23 +727,16 @@ const shop = function () {
                            <td style="padding: 0; background-color: #ffff;" bgcolor="#ffff">
                               <table width="100%" style="border-spacing: 0;">
                                  <tr>
-                                    <td style="text-align: center; padding: 45px 20px; color: black;" align="center">
-                                       <a href="https://dianakoliada.github.io/portfolio/e-commerce-js/" target="_blank" class="logo"
-                                          style="color: #363837; font-size: 28px; font-weight: 700; line-height: 1.2; text-decoration: none;">I-happy</a>
-                                       <p style="padding: 10px;">Slogan</p>
-                                       <p style="padding: 10px;">Address</p>
+                                    <td style="text-align: center; padding: 45px 20px; color: #000000;" align="center">
+                                       <a href="index.html" target="_blank" class="logo" style="color: #363837; font-size: 28px; font-weight: 700; line-height: 1.2; text-decoration: none;">I-happy</a>
+                                       <p style="padding: 10px;">We help to improve your life</p>
+                                       <p style="padding: 10px;">Address info</p>
                                        <a href="https://www.facebook.com/" target="_blank" style="padding-right: 10px;">
-                                          <img
-                                             src="https://cdn.iconscout.com/icon/premium/png-512-thumb/facebook-2752192-2285009.png?f=webp&w=256"
-                                             alt="Icon facebook" width="20" style="border: 0;"></a>
+                                          <img src="https://img.icons8.com/?size=50&id=118467&format=png" alt="Icon facebook" width="20" style="border: 0;"></a>
                                        <a href="https://www.instagram.com/" target="_blank" style="padding-right: 10px;">
-                                          <img
-                                             src="https://cdn.iconscout.com/icon/free/png-512/free-instagram-1868978-1583142.png?f=webp&w=256"
-                                             alt="Icon instagram" width="20" style="border: 0;"></a>
-                                       <a href="https://www.youtube.com/" target="_blank" style="padding-right: 10px;">
-                                          <img
-                                             src="https://cdn.iconscout.com/icon/free/png-512/free-youtube-227-498416.png?f=webp&w=256"
-                                             alt="Icon youtube" width="20" style="border: 0;"></a>
+                                          <img src="https://img.icons8.com/?size=50&id=32309&format=png" alt="Icon instagram" width="20" style="border: 0;"></a>
+                                       <a href="#" style="padding-right: 10px;">
+                                          <img src="https://img.icons8.com/?size=50&id=8824&format=png" alt="Icon twitter" width="20" style="border: 0;"></a>
                                        <p style="padding: 10px;">SUBSCRIBE</p>
                                     </td>
                                  </tr>
@@ -776,7 +746,7 @@ const shop = function () {
                      </table>
                   </center>
                </body>
-               </html>`
+               </html> `
    }
 
 
