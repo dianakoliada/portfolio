@@ -830,7 +830,7 @@ h2 .no-result {
 
 @media (max-width: 576px) {
    .cart-added-list .cart-added-list__btn:hover {
-      background-color: inherit;
+      background-color: #000;
    }
 
 }
@@ -899,7 +899,6 @@ h2 .no-result {
 }
 
 .cart-added-list__btn .icon-cart-bag {
-   -webkit-font-size: 62px;
    font-size: 22px;
 }
 
