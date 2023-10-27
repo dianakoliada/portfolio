@@ -23,7 +23,7 @@ body {
 }
 
 a {
-   --color: #000;
+   color: #000;
    --bg: transparent;
    --hover-color: var(--pr);
    --hover-bg: transparent;
@@ -37,6 +37,12 @@ a {
 a:hover {
    color: var(--hover-color);
    background-color: var(--hover-bg);
+}
+
+@media (max-width: 1158px) {
+   a:hover {
+      color: inherit;
+   }
 }
 
 ul {
@@ -255,6 +261,15 @@ h2 .no-result {
    height: 0;
    border-bottom: 1px solid;
    transition: width .25s;
+}
+
+@media (max-width: 1158px) {
+
+   .article .page-content a::before,
+   .link-hover::before {
+      bottom: none;
+      border-bottom: none;
+   }
 }
 
 .article .page-content a:hover::before,
