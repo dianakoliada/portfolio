@@ -366,6 +366,7 @@ const shop = function () {
                                                                            <button class="cart-added-list__item-btn-minus btn-light js-count" data-type="minus" data-input="#input-count-${id}" data-index="${index}"></button>
                                                                         </div>`)
          })
+         this.displayProductCart.insertAdjacentHTML('beforeend', `<a href="order.html?page=order" class="to-order-text no-result-cart-sm">Place an order</a>`)
       }
    }
 
@@ -573,7 +574,6 @@ const shop = function () {
 
    }
 
-
    // Шаблон для користувача
    this.emailUserTemplate = () => {
       // Роблю заглушку, що буде наповнюватись кожною ітерацією корзини
@@ -588,7 +588,7 @@ const shop = function () {
                                        <tr>
                                           <td style="padding: 0;">
                                              <div class="cart-ordered-list__item-img-hold">
-                                                <img src="https://64fecbcdf8b9eeca9e291654.mockapi.io/catalog${img}" alt=""
+                                                <img src="" alt="Product img"
                                                    class="cart-ordered-list__item-img" width="100"
                                                    style="border: 0; max-width: 100px;">
                                              </div>
@@ -667,16 +667,13 @@ const shop = function () {
                                  <tr>
                                     <td style="text-align: left; padding: 10px; color: #000000;">
                                        <h3>Total: ${this.summPrice} UAH</h3>
+                                       <p>Date of order</p>
+                                       <p>Address</p>
                                     </td>
                                  </tr>
                               </table>
                            </td>
                         </tr>
-
-
-
-
-
                         <!-- TWO COLUMN SECTION (new product advert)-->
                         <tr>
                            <td style="padding: 0; background-color: #f4f4f4; color: #171a1b;" bgcolor="#f4f4f4">

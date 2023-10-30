@@ -77,7 +77,9 @@ h2 .no-result {
 
 .no-result-cart-sm {
    margin: 0;
+   font-size: 21px;
    color: #938e8e;
+   opacity: .5;
 }
 
 .no-result--back {
@@ -99,6 +101,14 @@ h2 .no-result {
    .no-result--back {
       font-size: 17px;
    }
+}
+
+.to-order-text {
+   cursor: pointer;
+}
+
+.to-order-text:hover {
+   color: #938e8e;
 }
 
 .d-flex-center {
@@ -1335,10 +1345,6 @@ h2 .no-result {
    cursor: pointer;
    transition: all .5s;
 }
-
-/* .order-btn:hover {
-   background-color: #b4b4b4;
-} */
 
 .cart-ordered-list__item {
    display: flex;
