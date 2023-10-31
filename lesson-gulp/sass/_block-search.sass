@@ -1,0 +1,135 @@
+.block-left
+   width: 39%
+   +size-1312
+      min-width: 300px
+   +size-1140
+      width: 91%
+      max-width: 500px
+
+.search-block-title-main
+   margin-top: 6px
+   +size-1140
+      text-align: var(--text-align)
+      +size-740
+         margin-bottom: 60px
+
+.title-main
+   color: var(--color-bl)
+   font-size: 64px
+   font-weight: 800
+   line-height: 64px
+   +size-655
+      font-size: 53px
+
+.block-numbers
+   border-right: 1px solid var(--color-bl-2)
+   padding-right: 48px
+   margin-right: 48px
+   +size-1140
+      padding-right: 81px
+      margin-right: 81px
+      +size-955
+         border-right: none
+         margin: 0
+         padding: 0
+   &:last-child
+      border-right: none
+      padding: 0
+      margin: 0
+   &-holder
+      margin: 25px 0 52px
+      +size-1140
+         justify-content: space-around
+      +size-740
+         display: none
+   &-big-num
+      font-size: 32px
+      color: var(--color-bl-2)
+      font-weight: 500
+      margin-bottom: 9px
+      +size-655
+         font-size: 30px
+   &-text
+      margin-top: -11px
+.text-special
+   color: var(--color-bl-2)
+   font-size: 18px
+   font-weight: 500
+
+.search-holder
+   max-width: 100%
+   min-height: 516px
+   background-color: var(--color-main)
+   padding: 48px
+   border-radius: 24px
+   position: relative
+   +size-1140
+      padding-bottom: 500px
+      justify-content: center
+.search-input
+   display: inline-block
+   width: 100%
+   height: 64px
+   background-color: var(--color-wh)
+   border-radius: 12px
+   border: none
+   outline: none
+   padding: 0 70px 0 18px
+   &::placeholder
+      color: var(--color-4, rgba(30, 30, 30, 0.50))
+      font-size: 18px
+      font-weight: 500
+      +size-655
+         font-size: 16px
+.input-holder
+   position: relative
+.form-submit
+   position: absolute
+   top: 8px
+   right: 8px
+   width: 48px
+   height: 48px
+   background-color: var(--color-main)
+   border-radius: 12px
+   border: none
+   cursor: pointer
+   transition: 1s
+   &:focus-visible
+      outline: none
+   &:hover
+      background-color: var(--color-main-hover)
+.icon-search
+.block-right
+   width: 60%
+.img-block
+.img
+   display: block
+   max-width: 100%
+   position: absolute
+   +size-655
+      max-width: 90%
+   &-arrow-right
+      top: 13px
+      right: 25px
+      +size-1140
+         display: none
+   &-rect
+      bottom: 0
+      right: 75px
+      +size-1140
+         left: 48%
+         transform: translateX(-50%)
+      +size-497
+         display: none
+   &-plant-hand
+      bottom: 0
+      right: 57px
+      z-index: 2
+      +size-1140
+         left: 50%
+         transform: translateX(-50%)
+   &-arrow-left
+      bottom: 91px
+      right: 43%
+      +size-1312
+         display: none
