@@ -839,6 +839,7 @@ h2 .no-result {
 @media (max-width: 360px) {
    .cart-added-list .cart-added-list__item-list.show {
       right: -12px;
+      width: 284px;
    }
 }
 
