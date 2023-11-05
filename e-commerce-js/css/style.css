@@ -208,6 +208,12 @@ h2 .no-result {
    font-size: 26px;
 }
 
+@media (max-width: 360px) {
+   .dropdown-btn {
+      font-size: 23px;
+   }
+}
+
 .dropdown-btn::after {
    content: '\203A';
    position: absolute;
@@ -451,7 +457,10 @@ h2 .no-result {
 
 @media (max-width: 450px) {
    .catalog .catalog__header {
-      align-items: baseline;
+      align-items: center;
+      flex-direction: column-reverse;
+      gap: 10px;
+      padding: 0 0 50px;
    }
 }
 
@@ -797,7 +806,12 @@ h2 .no-result {
    .cart-added-list .cart-added-list__btn:hover {
       background-color: #000;
    }
+}
 
+@media (max-width: 360px) {
+   .cart-added-list .cart-added-list__btn {
+      right: -20px;
+   }
 }
 
 .cart-added-list .cart-added-list__btn:focus {
@@ -820,6 +834,12 @@ h2 .no-result {
 
 .cart-added-list .cart-added-list__item-list.show {
    right: var(--item-indent);
+}
+
+@media (max-width: 360px) {
+   .cart-added-list .cart-added-list__item-list.show {
+      right: 0;
+   }
 }
 
 .hide {
@@ -1084,6 +1104,12 @@ h2 .no-result {
    line-height: 1.2;
 }
 
+@media (max-width: 360px) {
+   .article .article__title {
+      font-size: 33px;
+   }
+}
+
 .article .page-content {
    background-color: #f4f4f4;
    padding: 30px;
@@ -1213,11 +1239,18 @@ h2 .no-result {
 }
 
 @media (max-width: 542px) {
-
    .order-page .order-page-title,
    .success {
       font-size: 32px;
    }
+}
+
+@media (max-width: 360px) {
+   .order-page .order-page-title,
+   .success {
+      font-size: 30px;
+   }
+
 }
 
 .order-page .flex-holder {
