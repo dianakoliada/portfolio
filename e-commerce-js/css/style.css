@@ -613,8 +613,8 @@ h2 .no-result {
    --hover-link: #318CE7;
    max-width: 360px;
    padding: 0 15px;
-   border: 1px solid #eee;
    background-color: #f7f7f7;
+   box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
 }
 
 .card-product .card-product__img-hold {
@@ -826,6 +826,7 @@ h2 .no-result {
    right: calc(var(--item-size) - (var(--item-size) * 2.5));
    width: var(--item-size);
    background-color: #fff;
+   box-shadow: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
    padding: 15px;
    border-radius: 15px;
    max-height: 300px;
