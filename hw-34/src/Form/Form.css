@@ -1,0 +1,51 @@
+.input-group {
+   margin-bottom: 2rem;
+   font-size: 1.25rem;
+   position: relative;
+}
+
+.input {
+   all: unset;
+   color: #fff;
+   padding: 1rem;
+   border: 1px solid #fff;
+   border-radius: 10px;
+   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   color: #fff;
+   pointer-events: none;
+   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus {
+   border: 1px solid #09d3ac;
+}
+
+.input:is(:focus, :valid) ~ label {
+   transform: translateY(-120%) scale(0.7);
+   background-color: #303846;
+   padding-inline: 0.3rem;
+   color: #09d3ac;
+}
+
+.btn {
+   margin-left: 1.3rem;
+   outline: none;
+   border: 1px solid #fff;
+   color: #fff;
+   background-color: #303846;
+   padding: 1rem 1.8rem;
+   border-radius: 10px;
+   font-size: 1.25rem;
+}
+
+.btn:hover {
+   border: 1px solid #09d3ac;
+   color: #09d3ac;
+   cursor: pointer;
+}
