@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html', {"title": "Apple Store Search"})
+
+<body>
+
+   @@include('html/svg.html', {})
+   @@include('html/header.html', {})
+   @@include('html/loader.html', {})
+
+   <div class="container">
+      <div class="input-group input-group-search">
+         <i class="fa-solid fa-magnifying-glass icon" id="js-icon-search"></i>
+         <input placeholder="Search" type="search" class="input input-search" id="js-input-search">
+      </div>
+   </div>
+
+   @@include('html/main.html', {})
+   @@include('html/cart-btn.html', {})
+   @@include('html/footer.html', {})
+
+</html>

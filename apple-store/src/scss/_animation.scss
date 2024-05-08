@@ -1,0 +1,30 @@
+@keyframes fall {
+   0% {
+      transform: translateY(-200px);
+      opacity: 0;
+
+   }
+   20%, 50%, 80%, to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+   40% {
+      transform: translateY(-30px);
+   }
+   70% {
+      transform: translateY(-10px);
+   }
+   85% {
+      transform: translateY(-4px);
+   }
+}
+
+@keyframes spinner {
+   from {
+      transform: rotate(0);
+   }
+
+   to {
+      transform: rotate(360deg);
+   }
+}

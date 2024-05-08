@@ -1,0 +1,150 @@
+.order-page {
+   margin-top: 13rem;
+   .flex-holder {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: .9rem;
+      .page-content-order,
+      .page-content-info {
+         width: 49%;
+         background-color: getColor(secondary-bg-color);
+         padding: 1.9rem;
+         border-radius: .5rem;
+         box-shadow: $box-shadow-main;
+      }
+      .page-content-info {
+         .cart-ordered-list__item {
+            border-bottom: 1px solid #dedede;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            &:last-of-type {
+               border-bottom: none;
+               margin-bottom: 2.5rem;
+            }
+            .cart-ordered-list__item-img-hold {
+               @include size(8rem, 31%);
+               border-radius: .5rem;
+               .cart-ordered-list__item-img {
+                  min-width: 8rem;
+                  min-height: 8rem;
+                  width: 100%;
+                  border-radius: .5rem;
+                  overflow: hidden;
+               }
+            }
+            .cart-ordered-list__item-text-hold {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               row-gap: .3rem;
+               width: 18.75rem;
+               margin-top: .625rem;
+            }
+         }
+         .total-sum {
+            font-weight: weight(bold);
+            font-size: 1.4em;
+         }
+      }
+      .page-content-order {
+         p {
+            margin-bottom: 1rem;
+         }
+         .order-form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.56rem;
+            width: 100%;
+            padding: 0 1rem;
+            input,
+            textarea {
+               @include size(100%, 1.9rem);
+               display: block;
+               border: none;
+               outline: none;
+               border-radius: .5rem;
+               padding: 1rem;
+            }
+            input::placeholder,
+            textarea::placeholder {
+               font-family: inherit;
+               font-size: inherit;
+               color: #dedede;
+            }
+            input:focus,
+            textarea:focus {
+               box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+            textarea {
+               height: 5rem;
+            }
+            label {
+               line-height: 2;
+               padding-left: .7rem;
+            }
+            span {
+               color: red;
+               font-size: .9em;
+               padding-left: .7rem;
+            }
+            .btn {
+               border: none;
+               outline: none;
+               width: 100%;
+               background-color: #4187f7;
+               color: #fff;
+               &:hover {
+                  background-color: $hover-color;
+               }
+            }
+         }
+      }
+   }
+}
+
+.empty-cart-holder {
+   margin: 14rem auto 0;
+   width: 60%;
+   padding: 6rem 2rem;
+   border-radius: .5rem;
+   h2 {
+      margin: 0;
+      text-align: center;
+   }
+   @include flexCenter(column);
+   a {
+      display: block;
+      text-align: center;
+      font-size: 1.4em;
+
+      .icon-cart {
+         color: $hover-color;
+         font-size: 3rem;
+         display: block;
+         margin: 2rem 0;
+      }
+   }
+}
+
+.success {
+   padding: 0 1rem;
+   font-size: 1.9rem;
+   font-weight: weight(bold);
+   color: #2dd36f;
+   text-align: center;
+   .icon {
+      padding-bottom: 2rem;
+      font-size: 5rem;
+      animation: fall 1s linear;
+   }
+   p {
+      font-size: .9em;
+      line-height: 60px;
+   }
+}
+
+

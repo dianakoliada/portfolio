@@ -1,0 +1,111 @@
+.slide-container {
+   max-width: 120rem;
+   width: 100%;
+   padding: 3rem 1rem;
+   margin: 1rem auto;
+   background-color: getColor(primary-bg-color);
+   .title-square {
+      margin-bottom: 3rem;
+   }
+   .slide-content {
+      @include flexCenter(row);
+      margin: 0 1.875rem;
+      overflow: hidden;
+      border-radius: 1.6rem;
+      .card {
+         border-radius: 1.6rem;
+         background-color: getColor(secondary-bg-color);
+         margin: 1rem  auto;
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+         .image-content,
+         .card-content {
+            @include flexCenter(column);
+            justify-content: flex-start;
+            padding: .6rem .9rem;
+            margin-top: 1rem;
+            h2 {
+               margin: 0;
+            }
+         }
+         .image-content {
+            position: relative;
+            row-gap: .3rem;
+            padding: 1.6rem 0;
+            .overlay {
+               @include positionTopLeft(absolute, -1rem, 0, 0);
+               @include size(100%, 100%);
+               background-color: #0062ffd1;
+               border-radius: 1.6rem 1.6rem 0 1.6rem;
+               &::before,
+               &::after {
+                  @include size(2.5rem, 2.5rem);
+                  content: '';
+                  position: absolute;
+                  right: 0;
+                  bottom: -2.5rem;
+                  background-color: #0062ffd1;
+               }
+               &::after {
+                  width: 2.56rem;
+                  border-radius: 0 1.6rem 0 0;
+                  background-color: getColor(secondary-bg-color);
+               }
+            }
+            .card-image {
+               @include size(9.4rem, 9.4rem);
+               position: relative;
+               border-radius: 50%;
+               background: getColor(secondary-bg-color);
+               padding: 3px;
+               .card-img {
+                  @include size(100%, 100%);
+                  object-fit: cover;
+                  border-radius: 50%;
+                  border: 4px solid $hover-color;
+               }
+            }
+         }
+         .card-content {
+            min-height: 10rem;
+            height: 12rem;
+            .name {
+               font-size: 1.1rem;
+               font-weight: weight(regular);
+               color: getColor(secondary-color);
+            }
+            .description {
+               font-size: .9rem;
+               color: getColor(secondary-color);
+               text-align: center;
+               padding-bottom: 1rem;
+               font-weight: weight(normal);
+            }
+         }
+      }
+   }
+   .swiper-nav-btn {
+      @include transition-ease;
+      color: #0062ffd1;
+      &:hover {
+         color: $hover-color;
+      }
+      &::before,
+      &::after {
+         font-size: 2.5rem;
+      }
+   }
+   .swiper-button-next {
+      right: 0;
+   }
+   .swiper-button-prev {
+      left: 0;
+   }
+   .swiper-pagination-bullet {
+      background-color: #0062ffd1;
+      opacity: 1;
+   }
+   .swiper-pagination-bullet-active {
+      background-color: $hover-color;
+   }
+}
+

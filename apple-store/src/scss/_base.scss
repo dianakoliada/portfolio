@@ -1,0 +1,146 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   //outline: 1px solid red;
+}
+
+body {
+   background-color: getColor(primary-bg-color);
+   color: getColor(secondary-color);
+   font-family: $font-stack;
+   font-size: 1rem;
+   font-weight: weight(regular);
+   line-height: 1.6;
+   position: relative;
+}
+
+h1, h2, h3 {
+   font-weight: weight(bold);
+}
+
+h2 {
+   font-size: 1.9em;
+   margin: 2rem 0;
+}
+
+h3 {
+   font-size: 1.5em;
+   margin: 1rem 0 .5rem;
+}
+
+input,
+textarea {
+   font-size: 1rem;
+}
+
+a {
+   color: getColor(secondary-color);
+   text-decoration: none;
+   display: inline-flex;
+   font-size: 1.1rem;
+}
+
+.active {
+   background-color: getColor(secondary-color);
+   color: getColor(primary-bg-color);
+   padding: 0 .3rem;
+}
+
+svg {
+   @include size(1em, 1em);
+   position: relative;
+}
+
+.container {
+   max-width: 75rem;
+   margin: 0 auto;
+   padding: 0 1.25rem;
+}
+
+.container-fill {
+   max-width: 120rem;
+   margin: 0 auto;
+   padding: 0 1rem;
+}
+
+.hide {
+   display: none;
+}
+
+.line-heigh {
+   line-height: 3rem;
+}
+
+.no-word-wrap {
+   white-space: nowrap;
+}
+
+.title-square {
+   @include flexCenter(column);
+   position: relative;
+   min-height: 11rem;
+   text-align: center;
+   &::before {
+      @include size(5.9rem, 9.4rem);
+      border: 5px solid #e9ecef;
+      border-radius: .5rem; 
+   }
+   .title-square__small {
+      z-index: 1;
+      font-size: .9rem;
+      font-weight: weight(regular);
+      color: #6c757d;
+   }
+   .title-square__main {
+      z-index: 1;
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      font-weight: weight(bold);
+   }
+}
+.title-square::before,
+.title-square::after {
+   @include positionTopLeft(absolute, 13px, 50%, 0);
+   content: '';
+   transform: translate(-50%, 0);
+}
+
+.btn {
+   @include flexCenter(row);
+   @include size(80%, 2.5rem);
+   @include transition-ease;
+   background-color: getColor(secondary-color);
+   color: getColor(primary-bg-color);
+   border-radius: .5rem;
+   border: 1px solid transparent;
+   font-size: 1.25rem;
+   cursor: pointer;
+   &:hover {
+      background-color: $hover-color;
+      color: #fff;
+   }
+} 
+
+.show {
+   opacity: 1;
+   transform: scale(100%);
+}
+
+.cart-count {
+   @include positionTopRight(absolute, -4px, -9px, 2);
+   @include size(18px, 18px);
+   @include flexCenter(row);
+   font-size: .6rem;
+   font-weight: weight(bold);
+   background-color: #EB4C42;
+   border-radius: .6rem;
+   padding: 0 5px;
+   color: #fff;
+}
+.no-result {
+   font-size: 1.3rem;
+   color: getColor(secondary-color);
+   margin: 0;
+   padding: 0;
+}

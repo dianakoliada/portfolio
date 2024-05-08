@@ -1,0 +1,123 @@
+@include media-md {
+   header {
+      .navigation__hold {
+         .navigation__left {
+            .menu-btn {
+               display: block;
+            }
+            .nav {
+               position: relative;
+               .menu-nav {
+                  @include positionTopLeft(absolute, 19px, 23px, 4);
+                  transition: 0.25s;
+                  flex-direction: column;
+                  row-gap: .6rem;
+                  opacity: 1;
+                  transform: scale(0);
+                  padding: 1rem;
+                  background-color: getColor(primary-bg-color);
+                  min-width: 12rem;
+                  box-shadow: $box-shadow-main;
+                  border-radius: .9rem;
+                  .menu-nav__link {
+                     font-size: 1em;
+                  }
+               }
+               .show {
+                  opacity: 1;
+                  transform: scale(100%);
+               }
+            }
+         }
+      }
+   }
+   .order-page {
+      .flex-holder {
+         flex-direction: column;
+         .page-content-order,
+         .page-content-info {
+            width: 100%;
+         }
+         .page-content-order {
+            .form-group {
+               @include flexStart(column);
+               width: 100%;
+            }
+            p {
+               padding: 0 1rem;
+               text-align: center;
+               font-weight: weight(bold);
+            }
+            .order-btn {
+               margin: 0 auto;
+            }
+         }
+      } 
+   }
+   .empty-cart-holder {
+      width: 80%;
+   }
+}
+
+@include media-sm {
+   header {
+      .navigation__hold {
+         padding: 1rem .8rem;
+         .menu-nav{
+            a:hover {
+               width: 0;
+            }
+         }
+      }
+   }
+   .catalog__header {
+      flex-direction: column;
+      align-items: center;
+      .catalog__text-holder {
+         order: -1;
+      }
+   }
+   .tel,
+   .email {
+      strong {
+         display: none;
+      }
+   }
+   .order-page {
+      margin-top: 8rem;
+      .flex-holder {
+         .page-content-info {
+            p {
+               font-size: 1em;
+            }
+         }
+         .page-content-order {
+            padding: 2rem 0;
+         }
+      }
+   }
+   .empty-cart-holder {
+      margin: 0 auto;
+      h2 {
+         font-size: 1.5em;
+      }
+      a {
+         font-size: 1.2em;
+      }
+   }
+   .success {
+      margin-bottom: 3rem;
+      .icon {
+         font-size: 3.5rem;
+      }
+      p {
+         font-size: .8em;
+      }
+   }
+   footer {
+      margin-top: 4rem;
+      .navbar-nav {
+         flex-direction: column;
+      }
+   }
+}

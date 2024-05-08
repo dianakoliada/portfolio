@@ -1,0 +1,40 @@
+@@include('blocks/head.html', {
+"title":"Shopping cart"
+})
+
+@@include('blocks/block-nav.html')
+
+<div class="cart-done">
+  <div class="container-sm">
+    <div class="cart-done-holder flex flex-center flex-direct cart-empty-holder">
+      <div class="cart-done-title-holder cart-empty-title-holder">
+        <h1 class="cart-done-title title">Your order has been accepted</h1>
+      </div>
+      <div class="cart-done-icon-holder cart-empty-icon-holder">
+        <img src="../src/img/shopping-cart/tick-inside-circle.png" alt="shopping cart"
+          class="cart-done-icon cart-empty-icon">
+      </div>
+      <div class="cart-done-text-holder">
+        <p class="cart-done-text text">
+          Thanks! Your order has been accepted.
+        </p>
+        <p class="cart-done-text text">
+          Order number: <span class="cart-done-number text-special--success">123</span>
+        </p>
+      </div>
+      <div class="cart-done-text-holder flex flex-center flex-direct">
+        <div class="cart-done-pic-holder">
+          <img src="../src/img/shopping-cart/mail (1).png" alt="shopping cart" class="cart-done-pic">
+        </div>
+        <p class="cart-done-text text">
+          The info is saved in your personal account and sent to your e-mail.
+        </p>
+        <a href="../html/catalogue.html" class="cart-empty-text text-special text-sm">
+          Back to the store
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+@@include('blocks/footer.html')

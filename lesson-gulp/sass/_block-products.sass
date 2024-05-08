@@ -1,0 +1,99 @@
+.products-list
+   margin-top: 93px
+   width: 100%
+
+   &-holder
+      width: 100%
+      column-gap: 10px
+      justify-content: center
+
+   &-title-holder
+      display: flex
+      flex-direction: column
+      max-width: 251px
+      margin-bottom: 12px
+      +size-1312
+         max-width: 280px
+         width: 100%
+         text-align: center
+         justify-content: center
+         align-items: center
+
+   &-title
+      text-align: var(--text-align-left)
+      line-height: 48px
+      margin-top: 5px
+      +size-1312
+         text-align: var(--text-align)
+         padding-bottom: 0
+
+   &-desk
+      width: 200px
+      text-align: var(--text-align-left)
+      line-height: 28px
+      margin-bottom: 22px
+      padding-top: 12px
+      +size-1312
+         text-align: var(--text-align)
+         margin: 21px 0
+
+   &-btn
+      background-color: var(--color-main)
+      width: 67%
+      margin: -4px
+      &:hover
+         background-color: var(--color-main-hover)
+
+   &-card-items
+      row-gap: 8px
+      column-gap: 43px
+      justify-content: space-between
+      width: 79%
+      +size-1312
+         justify-content: space-around
+         width: 100%
+         margin: 15px auto 0
+
+   &-card
+      max-width: 1050px
+
+   &-card-img-holder
+      margin-bottom: 17px
+      margin-top: 4px
+      position: relative
+
+   &-card-img-link
+   &-card-img
+      display: block
+      width: 100%
+      opacity: 1
+      &:hover
+         opacity: .7
+
+   &-card-content
+   &-card-title
+    +size-955
+      text-align: var(--text-align)
+   &-card-price
+      text-align: var(--text-align-left)
+
+.btn
+   padding: 14px 30px
+   border-radius: 8px
+   transition: 1s
+   display: inline-flex
+
+.btn-add-product
+   position: absolute
+   bottom: 10px
+   right: 10px
+   padding: 10px
+   color: #000
+   font-size: 24px
+   background-color: rgb(255 255 255 / 49%)
+   &:hover
+      background-color: var(--color-main)
+
+.img-products-list
+.img-arrow
+   padding-left: 10px

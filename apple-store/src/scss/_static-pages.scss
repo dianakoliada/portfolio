@@ -1,0 +1,31 @@
+article {
+   margin-top: 10rem;
+   color: getColor(primary-color);
+   .page-content {
+      background-color: getColor(secondary-bg-color);
+      padding: 2rem;
+      & > p:first-child {
+         text-align: center;
+         font-size: 1.1em;
+      }
+      .contact-block {
+         margin: 1rem 0 0 0;
+         .viber {
+            color: #7360f2;
+         }
+         .mobile {
+            margin-right: .625rem;
+         }
+      }
+      .icon {
+         margin: 0 .3rem 0 1rem;
+         font-size: 1.2em;
+         cursor: pointer;
+         color: getColor(secondary-color);
+      }
+      .heart,
+      .envelope {
+         color: $hover-color;
+      }
+   }
+}

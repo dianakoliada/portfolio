@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html', {"title": "Apple Store Contacts"})
+
+<body>
+
+   @@include('html/svg.html', {})
+   @@include('html/header.html', {})
+   @@include('html/loader.html', {})
+
+   <article class="article">
+      <div class="container">
+         <h2 class="article__title">Contacts</h2>
+         <div class="page-content">
+            <p>
+               We are always ready to answer your questions and provide assistance. <br>Below you will find various ways
+               to contact with our team.
+            </p>
+            <div class="contact-block tel">
+               <h3>Phone</h3>
+               <p>
+                  For quick contact with our specialists, you can use our support phone numbers:
+               </p>
+               <div class="line-heigh no-word-wrap">
+                  <i class="fa-solid fa-phone icon"></i>
+                  <strong>Phone for calls from landlines:</strong>
+                  <a href="tel:+380991234567">+38(099)12-34-567</a>
+               </div>
+               <div class="line-heigh no-word-wrap">
+                  <i class="fa-solid fa-mobile icon mobile"></i>
+                  <strong>Phone for calls from cell phones:</strong>
+                  <a href="tel:+380991234589">+38(099)12-34-589</a>
+               </div>
+               <div class="line-heigh no-word-wrap">
+                  <i class="fa-brands fa-viber icon viber"></i>
+                  <strong>Viber:</strong>
+                  <a href="viber://chat?number=+380991234589">+38(099)12-34-589</a>
+               </div>
+            </div>
+            <div class="contact-block email">
+               <h3>Email</h3>
+               <p>You can send us an email at:</p>
+               <div class="line-heigh no-word-wrap">
+                  <i class="fa-solid fa-envelope icon envelope"></i>
+                  <strong>Email:</strong>
+                  <a href="mailto:support@apple-techstore.com">support@apple-techstore.com</a>
+               </div>
+            </div>
+            <div class="contact-block address">
+               <h3>Address</h3>
+               <p>Our office is located at the address:</p>
+               <div>
+                  <i class="fa-solid fa-map icon" icon></i>
+                  <strong>Address:</strong>
+                  <a href="https://maps.app.goo.gl/yjkfnA54JNtYFVKD8">
+                     123 Apple Street, Cupertino, CA 12345, Сполучені Штати Америки
+                  </a>
+               </div>
+            </div>
+            </p>
+            <h3>Work schedule</h3>
+            <p>
+               Our team works for you from Monday to Friday from 9:00 am to 6:00 pm. <br>You can contact us during these
+               time for information and support.
+               <i class="fa-solid fa-heart icon heart"></i>
+            </p>
+         </div>
+      </div>
+   </article>
+
+   @@include('html/cart-btn.html', {})
+   @@include('html/footer.html', {})
+
+</html>

@@ -1,0 +1,225 @@
+.btn-light
+   --size: 28px
+   --color: #7f85a2
+   --bdrs: 10px
+   --bg: #E5E7EC
+   --fz: 14px
+   --icon-top: 0
+   --icon-right: 0
+   --hover-color: #000
+   --hover-bg: #E5E7EC
+   background-color: var(--bg)
+   color: var(--color)
+   border-radius: var(--bdrs)
+   width: var(--size)
+   height: var(--size)
+   display: inline-flex
+   justify-content: center
+   align-items: center
+   transition: .25s
+   padding: 0
+   font-size: var(--fz)
+   border: none
+   outline: none !important
+
+.btn-light:active,
+.btn-light:hover
+   color: var(--hover-color)
+   background-color: var(--hover-bg)
+
+.btn-light:focus
+   box-shadow: 0 0 0 3px rgba(216, 217, 219, 0.5)
+
+.btn-light .icon
+   top: var(--icon-top)
+   right: var(--icon-right)
+
+.cart-added-summ
+   --size: 18px
+   position: absolute
+   top: -5px
+   right: -5px
+   min-width: var(--size)
+   min-height: var(--size)
+   display: flex
+   justify-content: center
+   align-items: center
+   font-size: 10px
+   font-weight: 700
+   background-color: #EB4C42
+   border-radius: 10px
+   padding: 0 5px
+   color: #fff
+   z-index: 2
+   opacity: 0
+   transition: .25s
+   &.show
+      opacity: 1
+
+.cart-added-list
+   position: fixed
+   bottom: 30px
+   right: 30px
+
+.cart-added-list .cart-added-list__btn,
+.cart-added-list .cart-added-list__item-list,
+.cart-added-list .cart-added-list__item-btn-plus::before,
+.cart-added-list .cart-added-list__item-btn-minus::before,
+.cart-added-list .cart-added-list__item-title-link
+   transition: .25s
+
+.cart-added-list .cart-added-list__btn
+   display: flex
+   justify-content: center
+   align-items: center
+   width: 50px
+   height: 50px
+   background-color: #000
+   color: #fff
+   border: 1px solid transparent
+   border-radius: 50%
+   font-size: 22px
+   position: relative
+   z-index: 2
+   outline: none !important
+
+   &:hover
+      background-color: #6C798E
+
+   &:focus
+      box-shadow: 0 0 0 5px rgba(216, 217, 219, 0.5)
+
+.cart-added-list .cart-added-list__item-list
+   --item-size: 300px
+   --item-indent: 34px
+   position: absolute
+   bottom: var(--item-indent)
+   right: calc(var(--item-size) - (var(--item-size) * 2.5))
+   width: var(--item-size)
+   background-color: #fff
+   padding: 15px
+   border-radius: 15px
+   max-height: 300px
+   overflow-y: auto
+
+   &.show
+      right: var(--item-indent)
+
+.cart-added-list .cart-added-list__item
+   --img-bdrs: 6px
+   --img-size: 80px
+   --bottom-size: 12px
+   --btn-bdrs: 7px
+   --btn-size: 21px
+   gap: 15px
+   min-height: calc(var(--btn-size) * 3)
+   display: flex
+   justify-content: flex-start
+   align-items: flex-start
+   position: relative
+   margin-bottom: var(--bottom-size)
+   padding-bottom: var(--bottom-size)
+   border-bottom: 1px solid #f8f9fa
+
+   &:last-child
+      --bottom-size: 0
+      border-bottom: none
+
+   &-img
+      max-width: var(--img-size)
+      max-height: calc(var(--btn-size) * 3)
+      border-radius: var(--img-bdrs)
+      display: block
+
+   &-text-hold
+      margin: 0
+      padding-right: var(--btn-size)
+      width: 100%
+
+   &-title-link
+      color: #000
+      line-height: 1.18
+      font-size: 14px
+      font-weight: 600
+      display: block
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      max-width: 150px
+      margin-bottom: 2px
+
+   &-title-link:hover
+      color: #0B60E7
+
+   &-meta-list
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+
+   &-meta
+      color: #6C798E
+      font-size: 10px
+      font-weight: 500
+
+.cart-added-list .cart-added-list__item-btn-delete,
+.cart-added-list .cart-added-list__item-btn-plus,
+.cart-added-list .cart-added-list__item-btn-minus
+   --size: var(--btn-size)
+   --bdrs: var(--btn-bdrs)
+   position: absolute
+
+.cart-added-list .cart-added-list__item-btn-delete
+   --bg: rgb(229 231 236 / 30%)
+   --icon-right: 1px
+   --hover-color: #ff4d4d
+   --size: var(--btn-size)
+   margin-left: auto
+   margin-right: 0px
+   left: 0px
+   top: 0px
+   border-radius: var(--img-bdrs) 0 var(--btn-bdrs) 0
+   font-size: 10px
+
+.cart-added-list .cart-added-list__item-btn-plus,
+.cart-added-list .cart-added-list__item-btn-minus
+   --bg: rgb(229 231 236 / 20%)
+   --hover-color: #0B60E7
+   top: 0
+   right: 0
+
+.cart-added-list .cart-added-list__item-btn-minus
+   top: calc(var(--btn-size) * 2)
+
+.cart-added-list .cart-added-list__item-btn-plus:hover::before,
+.cart-added-list .cart-added-list__item-btn-minus:hover::before
+   opacity: 1
+
+.cart-added-list .cart-added-list__item-btn-minus::before,
+.cart-added-list .cart-added-list__item-btn-plus::before
+   content: ''
+   width: 100%
+   height: 100%
+   background-repeat: no-repeat
+   background-position: center
+   background-size: 9px
+   opacity: .35
+
+.cart-added-list .cart-added-list__item-btn-minus::before
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E")
+
+.cart-added-list .cart-added-list__item-btn-plus::before
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E")
+
+.cart-added-list__item-count
+   position: absolute
+   top: var(--btn-size)
+   right: 0
+   width: var(--btn-size)
+   height: var(--btn-size)
+   outline: none
+   border: none
+   font-size: 12px
+   font-weight: 600
+   color: #6C798E
+   text-align: center

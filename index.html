@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" translate="no">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name='freelancehunt' content='9340f5c973bc482'>
+   <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimal-ui, shrink-to-fit=no viewport-fit=cover">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap" rel="stylesheet">
+
+   <title>Diane`s Portfolio</title>
+
+   <style>
+      html,
+      body,
+      .container {
+         height: 100vh;
+      }
+
+      body {
+         margin: 0;
+         padding: 0;
+         display: flex;
+         justify-content: center;
+         font-family: 'Poppins', sans-serif;
+         background-color: #053135;
+         background-image: url(./img/pattern_06.png);
+         background-size: cover;
+      }
+
+      .container {
+         background-color: #064247;
+         width: 100%;
+         max-width: 650px;
+         padding: 0 30px;
+         margin-bottom: 70px;
+      }
+
+      .animate::after,
+      .animate::before,
+      .animate {
+         -webkit-transition: all .25s ease-in-out;
+         -moz-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+         transition: all .25s ease-in-out;
+      }
+
+      .page-title {
+         color: #fff;
+         font-size: 56px;
+         font-weight: 500;
+         text-align: center;
+      }
+
+      @media screen and (max-width: 768px) {
+         .page-title {
+            font-size: 42px;
+         }
+      }
+
+      .portfolio {
+         margin: 0 0 1rem;
+         font-size: 16px;
+         line-height: 26px;
+         font-weight: 300;
+         color: #fff;
+         padding-left: 21px;
+         list-style: none;
+      }
+
+      .portfolio .portfolio__link {
+         position: relative;
+         display: block;
+         padding: 4px 0;
+         color: #fff;
+         font-weight: 500;
+         font-size: 1.1rem;
+         letter-spacing: 1px;
+         text-decoration: none;
+         background-color: transparent;
+      }
+
+      .portfolio .portfolio__link::before {
+         content: '›';
+         position: absolute;
+         top: 47%;
+         left: -16px;
+         transform: translateY(-50%);
+         transition-delay: 70ms;
+         opacity: .7;
+      }
+
+      .portfolio .portfolio__link:hover {
+         padding-left: 6px;
+      }
+
+      .portfolio .portfolio__link:hover::before {
+         left: -9px;
+         opacity: 1;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <h1 class="page-title">Portfolio:</h1>
+      <ul class="portfolio">
+         <li class="portfolio__li">
+            <a href="apple-store/dist/index.html" class="portfolio__link animate" target="_blank">Apple store</a>
+            <span>Stack: Gulp, HTML, SCSS, JavaScript(ES6), AJAX, Swiper</span>
+         </li>
+         <li class="portfolio__li">
+            <a href="lesson-gulp/html/index.html" class="portfolio__link animate" target="_blank">Greenmind</a>
+            <span>Stack: Gulp, HTML, SCSS, JavaScript, AJAX</span>
+         </li>
+         <li class="portfolio__li">
+            <a href="https://dianakoliada.github.io/todo-list-react-app/" class="portfolio__link animate"
+               target="_blank">Todo List</a>
+            <span>Stack: React</span>
+         </li>
+      </ul>
+   </div>
+</body>
+
+</html>

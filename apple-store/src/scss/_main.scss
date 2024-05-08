@@ -1,0 +1,189 @@
+main {
+   margin-top: 10rem;
+   .catalog{
+      .catalog__header {
+         margin: 4rem 0;
+         display: flex;
+         justify-content: space-between;
+         .catalog__select-category {
+            position: relative;
+            .dropdown-btn {
+               display: flex;
+               align-items: flex-start;
+               padding-right: 1.75rem;
+               color: getColor(secondary-color);
+               font-size: 1.6rem;
+               font-weight: weight(bold);
+            }
+            .icon {
+               @include positionTopRight(absolute, 1.69rem, 0, 2);
+               font-size: 1.6rem;
+               cursor: pointer;
+            }
+            .dropdown-content {
+               @include positionTopLeft(absolute, 3rem, .68rem, 1);
+               transition: 0.25s;
+               opacity: 1;
+               transform: scale(0);
+               padding: 1rem .875rem;
+               background-color: getColor(primary-bg-color);
+               min-width: 10rem;
+               box-shadow: $box-shadow-main;
+               border-radius: .9rem;
+               .dropdown-item {
+                  display: block;
+                  padding: .5rem 1rem;
+                  text-decoration: none;
+                  transition: 0.3s;
+                  font-weight: weight(regular);
+                  font-size: 1rem;
+                  min-width: 12.5rem;
+                  border-radius: .625rem;
+               }
+            }
+            .show {
+               opacity: 1;
+               transform: scale(100%);
+            }
+         }
+         .catalog__products-sum {
+            color: getColor(secondary-color);
+            font-size: 1.3rem;
+            font-weight: weight(bold);
+         }
+      }
+      .catalog__content {
+         .card-product {
+            background-color: getColor(primary-bg-color);
+            max-width: 15.7rem;
+         }
+      }
+   }
+   .hot-offers {
+      margin: 5rem 0;
+      .hot-offers__title {
+         .title-square__icon {
+            font-size: 2.5rem;
+            line-height: 1;
+            padding: 1rem 0 .4rem 0;
+            color: #ff0000;
+         }
+      }
+      .hot-offers__cards {
+         margin-top: 5rem;
+         .card-product {
+            max-width: 18rem;
+         }
+      }
+   }
+   .gallery {
+      margin: 6.25rem 0;
+      .gallery__items {
+         @include flexCenter(row);
+         flex-wrap: wrap;
+         gap: 1.875rem;
+         margin: 5rem 0 6.25rem;
+      }
+      .gallery__item {
+         position: relative;
+      }
+      .gallery__item-hover-box {
+         @include positionTopLeft(absolute, 0, 0, 0);
+         @include flexCenter(row);
+         @include size(100%, 100%);
+         background-color: rgba(11, 95, 231, 0.332);
+         border-radius: 1.25rem;
+         transition: .45s;
+         font-size: 1.25rem;
+         text-shadow: 0 0 15px rgba(254, 254, 254, 0.8);
+         color: #fff;
+         opacity: 0;
+         &:hover {
+            opacity: 1;
+         }
+      }
+      .gallery__item-img {
+         border-radius: 1.25rem;
+         display: block;
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+   }
+}
+
+.catalog,
+.hot-offers {
+   .catalog__content,
+   .hot-offers__cards {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      .card-product {
+         @include flexCenter(column);
+         padding: 0 .9rem;
+         background-color: getColor(primary-bg-color);
+         box-shadow: $box-shadow-main;
+         position: relative;
+         .card-product__img-hold {
+            @include flexCenter(row);
+            margin: 1rem 0;
+            overflow: hidden;
+            img {
+               width: 100%;
+               min-width: 12.5rem;
+               max-height: 100%;
+               border-radius: .9rem;
+               object-fit: cover;
+            }
+         }
+         .card-product__text-hold {
+            text-align: center;
+            position: relative;
+            margin-bottom: 5rem;
+            .card-product__title-link {
+               font-size: 1rem;
+               font-weight: weight(medium);
+            }
+            .card-product__price {
+               font-size: .8rem;
+               color: getColor(secondary-color);
+               font-weight: weight(regular);
+               small {
+                  position: relative;
+                  margin: 0 4px;
+                  font-size: 80%;
+                  &::before {
+                     @include positionTopLeft(absolute, 48%, 0, 0);
+                     @include size(100%, 0);
+                     content: '';
+                     border-bottom: 1px solid;
+                     opacity: .5;
+                     transform: rotate(355deg);
+                  }
+               }
+            }
+         }
+         .btn {
+            @include positionBottomLeft(absolute, 0, 1.56rem, 0);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+         }
+      }
+   }
+}
+
+.gallery,
+.slide-container {
+   .title-square::after {
+      @include size(2px, 3.75rem);
+      top: -1rem;
+      z-index: 1;
+      background-color: #fee085;
+   }
+}
+
+
+
+
+
+

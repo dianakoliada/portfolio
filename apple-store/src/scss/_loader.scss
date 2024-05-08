@@ -1,0 +1,32 @@
+.loader-container {
+   width: 100%;
+   position: fixed;
+   top: 12rem;
+   left: 0;
+   z-index: 999;
+   .aligning {
+      @include flexCenter(column);
+      width: 100%;
+      .loading {
+         div {
+            @include size(2.2rem, 2.2rem);
+            border-radius: 100%;
+            border-right: solid 5px $hover-color;
+            border-left: solid 5px getColor(secondary-bg-color);
+            border-top: solid 5px getColor(secondary-bg-color);
+            border-bottom: solid 5px getColor(secondary-bg-color);
+            animation: spinner 1.5s infinite;
+         }
+      }
+      p {
+         text-align: center;
+         color: $hover-color;
+      }
+   }
+}
+
+.end-loading {
+   filter: opacity(0);
+   transform: scale(.5);
+   visibility: hidden;
+}

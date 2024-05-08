@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('html/head.html', {"title": "Apple Store Order"})
+
+<body>
+
+   @@include('html/svg.html', {})
+   @@include('html/header.html', {})
+   @@include('html/loader.html', {})
+
+   <div class="order-page" id="js-order-page-holder">
+      <div class="container">
+         <div class="order-page__holder" id="js-order-block-holder">
+            <h2 class="no-word-wrap">Order details</h2>
+            <div class="flex-holder">
+               <div class="page-content page-content-info" id="js-order-total">
+                  <!-- here product list are displayed -->
+               </div>
+               <div class="page-content page-content-order" id="js-form-holder">
+                  <div class="page-content page-content-form-wrap">
+                     <p>
+                        Please fill out the form to complete your order:
+                     </p>
+                     <form action="/" method="POST" class="order-form" id="js-form">
+                        <div class="form-group">
+                           <label for="name">Full name:</label>
+                           <input type="text" id="name" name="name" placeholder="Enter your full name" value=""
+                              required>
+                        </div>
+                        <div class="form-group">
+                           <label for="phone">Phone number:</label>
+                           <input type="tel" placeholder="+38(0**)** ** ***" id="phone" name="phone" value="+38"
+                              maxlength="13" required>
+                           <span id="error-message" class="error hide"></span>
+                        </div>
+                        <div class="form-group">
+                           <label for="email">Email:</label>
+                           <input type="email" id="email" name="to" placeholder="example@gmail.com" value="" required>
+                        </div>
+                        <div class="form-group">
+                           <label for="address">Delivery address:</label>
+                           <textarea id="address" name="address" rows="4" placeholder="Enter delivery address"
+                              required></textarea>
+                        </div>
+                        <div class="form-group">
+                           <label for="comment">Сomment:</label>
+                           <textarea id="comment" name="comment" rows="2"
+                              placeholder="Comment for the staff"></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="js-submit">Order now</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   @@include('html/footer.html', {})
+
+</html>

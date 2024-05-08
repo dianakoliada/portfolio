@@ -1,0 +1,146 @@
+@@include('blocks/head.html', {
+"title":"Shopping cart"
+})
+
+@@include('blocks/block-nav.html')
+
+<div class="cart-purchase" id="fullCart">
+   <div class="container">
+      <div class="cart-purchase-title-holder">
+         <h1 class="cart-purchase-title title">To make an order</h1>
+      </div>
+      <div class="cart-purchase-holder flex" style="flex-wrap: nowrap;">
+         <div class="cart-purchase-form-holder">
+            <p class="cart-purchase-text title-small">
+               Contacts:
+            </p>
+            <form class="cart-purchase-form" id="form-js">
+
+               <div class="cart-purchase-name">
+                  <label for="pib" class="cart-purchase-name-label color-padding"> Name:
+                     <input placeholder="" type="text" id="pib" name="pib" required
+                        class="cart-purchase-name-input input color-padding" value="Денис">
+                  </label>
+               </div>
+               <div class="cart-purchase-email">
+                  <label for="email" class="cart-purchase-email-label color-padding"> Email:
+                     <input placeholder="user@domain.com" type="email" id="email" name="to" required
+                        class="cart-purchase-email-input input color-padding" value="koliada.di@gmail.com">
+                  </label>
+               </div>
+               <div class="cart-purchase-phone">
+                  <label for="phone" class="cart-purchase-phone-label color-grey color-padding"> Phone:
+                     <input placeholder="+38(011)111-11-11" type="tel" id="phone" name="phone" required
+                        class="cart-purchase-phone-input input color-padding" value="+32342342234">
+                  </label>
+               </div>
+               <p class="cart-purchase-text title-small">
+                  Delivery:
+               </p>
+               <div class="cart-purchase-delivery-option">
+                  <label for="delivery" class="cart-purchase-delivery-label color-padding">Delivery option:
+                     <select id="delivery" name="delivery" required class="input">
+                        <option value="" disabled>
+                           Choose delivery option
+                        </option>
+                        <option value="Nova poshta" selected>Nova poshta</option>
+                        <option value="Ukr poshta">Ukr poshta</option>
+                     </select>
+                  </label>
+               </div>
+               <div class="cart-purchase-city-option">
+                  <label for="city" class="cart-purchase-city-label color-padding">City:
+                     <select id="city" name="city" required class="input">
+                        <option value="" disabled>Choose city</option>
+                        <option value="Dnipro" selected>Dnipro</option>
+                        <option value="Kyiv">Kyiv</option>
+                        <option value="Lviv">Lviv</option>
+                        <option value="Kharkiv">Kharkiv</option>
+                        <option value="Odesa">Odesa</option>
+                     </select>
+                  </label>
+               </div>
+               <div class="cart-purchase-post-office">
+                  <label for="post-office" class="cart-purchase-post-office-label color-padding">
+                     Post office:
+                     <select id="post-office" name="post-office" required class="input">
+                        <option value="" disabled>Choose post office</option>
+                        <option value="№33" selected>№33</option>
+                        <option value="№2">№2</option>
+                     </select>
+                  </label>
+               </div>
+               <p class="cart-purchase-text title-small">
+                  Payment:
+               </p>
+               <div class="cart-purchase-pay">
+                  <div class="cart-purchase-pay-label">
+                     <div class="form-group flex" style="gap: 10px">
+                        <input type="radio" id="online_payment" name="payment" value="online_payment" required checked>
+                        <label for="online_payment">Online payment (PayPal)</label>
+                     </div>
+                     <div class="form-group flex" style="gap: 10px">
+                        <input type="radio" id="card" name="payment" value="card" required>
+                        <label for="card">Card</label>
+                     </div>
+                     <div class="form-group flex" style="gap: 10px">
+                        <input type="radio" id="cash" name="payment" value="cash" required>
+                        <label for="cash">Cash</label>
+                     </div>
+                  </div>
+               </div>
+               <div class="cart-purchase-submit-holder">
+                  <button type="submit" class="cart-purchase-submit btn products-list-btn">Confirm order</button>
+               </div>
+            </form>
+            <p class="cart-purchase-text-privacy text">
+               By confirming the order, you agree to the
+               <a href="#" class="cart-purchase-link-privacy text">privacy policy</a>
+            </p>
+         </div>
+         <div class="cart-purchase-goods">
+            <p class="cart-purchase-text title-small">
+               Cart:
+            </p>
+
+            <div id="view-cart-purchase" class="view-cart-purchase">
+
+            </div>
+
+            <!-- cart-purchase-card -->
+            <div class="cart-purchase-total-price-holder">
+               <p class="cart-purchase-total-price title-small" id="total-price">
+               </p>
+            </div>
+
+
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+<div class="cart-empty" id="emptyCart">
+   <div class="container-sm">
+      <div class="cart-empty-holder flex flex-center flex-direct">
+         <div class="cart-empty-title-holder">
+            <h1 class="cart-empty-title title">SHOPPING CART</h1>
+         </div>
+         <div class="cart-empty-icon-holder flex flex-center">
+            <img src="../src/img/shopping-cart/shopping-cart (1).png" alt="shopping cart" class="cart-empty-icon">
+         </div>
+         <div class="cart-empty-text-holder">
+            <p class="cart-empty-text title">
+               Ups... Your cart is empty now
+            </p>
+            <a href="../html/catalogue.html" class="cart-empty-text text-special text-sm">
+               Back to the store
+            </a>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+@@include('blocks/footer.html')

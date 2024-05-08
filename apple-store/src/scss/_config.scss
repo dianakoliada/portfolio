@@ -1,0 +1,115 @@
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$hover-color: #0B60E7;
+$box-shadow-main: 0 5px 22px 0 rgba(208, 219, 229, .62), 0 2px 3px 0 rgba(107, 132, 160, .18), 0 5px 5px 0 rgba(237, 239, 242, .36);
+$font-weights: (
+   "normal": 400,
+   "regular": 500,
+   "medium": 600,
+   "bold": 700
+);
+$colors:(
+   primary-bg-color: #fff,
+   secondary-bg-color: #f7f7f7,
+   primary-color: #000,
+   secondary-color: #444448,
+);
+
+$colors-dark:(
+   primary-bg-color: map-get($colors, primary-color),
+   secondary-bg-color: map-get($colors, secondary-color),
+   primary-color: map-get($colors, secondary-bg-color),
+   secondary-color: map-get($colors, primary-bg-color),
+);
+
+:root {
+   @each $name, $color in $colors {
+      --color-#{$name}:#{$color};
+   }
+   --theme: 'light'
+}
+@media (prefers-color-scheme : dark) {
+   :root {
+      @each $name, $color in $colors-dark {
+         --color-#{$name}:#{$color};
+      }
+      --theme: 'dark'
+   }
+}
+
+@function getColor($color-name) {
+   @return var(--color-#{$color-name})
+}
+
+@function weight($weight-name) {
+   @return map-get($font-weights, $weight-name);
+}
+
+@mixin transition-ease {
+   transition: all .5s ease-in-out;
+}
+
+@mixin media-sm {
+   @media screen and (max-width: 548px) {
+      @content;
+   }
+}
+
+@mixin media-md {
+   @media screen and (max-width: 1115px) {
+      @content;
+   }
+}
+
+@mixin media-xl {
+   @media screen and (max-width: 1600px) {
+      @content;
+   }
+}
+
+@mixin flexCenter($direction) {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: $direction;
+}
+
+@mixin flexStart($direction) {
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-direction: $direction;
+}
+
+@mixin positionTopLeft($position, $top, $left, $zIndex) {
+   position: $position;
+   top: $top;
+   left: $left;
+   z-index: $zIndex;
+}
+
+@mixin positionTopRight($position, $top, $right, $zIndex) {
+   position: $position;
+   top: $top;
+   right: $right;
+   z-index: $zIndex;
+}
+
+@mixin positionBottomRight($position, $bottom, $right, $zIndex) {
+   position: $position;
+   bottom: $bottom;
+   right: $right;
+   z-index: $zIndex;
+}
+
+@mixin positionBottomLeft($position, $bottom, $left, $zIndex) {
+   position: $position;
+   bottom: $bottom;
+   left: $left;
+   z-index: $zIndex;
+}
+
+@mixin size($width, $height) {
+   width: $width;
+   height: $height;
+}
+

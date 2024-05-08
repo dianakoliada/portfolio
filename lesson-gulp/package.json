@@ -1,0 +1,21 @@
+{
+  "name": "greenmind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Test my code"
+  },
+  "author": "Diana Koliada",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "jquery": "^3.7.0",
+    "normalize.css": "^8.0.1"
+  }
+}
