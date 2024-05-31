@@ -38,6 +38,9 @@
          .page-content-info {
             width: 100%;
          }
+         .page-content-info {
+            margin-bottom: 1rem;
+         }
          .page-content-order {
             .form-group {
                @include flexStart(column);

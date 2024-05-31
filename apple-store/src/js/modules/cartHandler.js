@@ -84,7 +84,7 @@ const changeProductCartCount = (item) => {
 const handleCartClicks = (e) => {
    let clickedEl = e.target;
 
-   if (clickedEl.classList.contains('js-icon-cart') && clickedEl.classList.contains('js-icon-delete') && clickedEl.classList.contains('js-count-icon')) {
+   if (clickedEl.classList.contains('js-icon-cart') || clickedEl.classList.contains('js-icon-delete') || clickedEl.classList.contains('js-count-icon')) {
       e.preventDefault();
    }
 
